@@ -4,4 +4,4 @@
 \contentsline {subsection}{\numberline {3.1}Magnetometer}{5}
 \contentsline {subsection}{\numberline {3.2}Riometer}{5}
 \contentsline {subsection}{\numberline {3.3}Analysis}{6}
-\contentsline {section}{\numberline {4}Results and Conclusions}{9}
+\contentsline {section}{\numberline {4}Results and Conclusions}{8}
