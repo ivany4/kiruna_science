@@ -1,7 +1,7 @@
-\contentsline {section}{\numberline {1}Objectives}{3}
+\contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {section}{\numberline {2}Classification}{3}
 \contentsline {section}{\numberline {3}Auroral Forecast}{3}
-\contentsline {subsection}{\numberline {3.1}Magnetometer}{5}
-\contentsline {subsection}{\numberline {3.2}Riometer}{5}
-\contentsline {subsection}{\numberline {3.3}Analysis}{6}
-\contentsline {section}{\numberline {4}Results and Conclusions}{8}
+\contentsline {subsection}{\numberline {3.1}Magnetometer}{4}
+\contentsline {subsection}{\numberline {3.2}Riometer}{4}
+\contentsline {subsection}{\numberline {3.3}Analysis}{5}
+\contentsline {section}{\numberline {4}Conclusions}{5}
