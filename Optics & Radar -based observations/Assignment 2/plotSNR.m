@@ -1,4 +1,4 @@
-function plotSNR(data, repeat, plot_title, date, subplots)
+function plotSNR(data, repeat, plot_title, subplots)
 
 %% structure of a data:
 %  - UT
@@ -33,7 +33,6 @@ axes = findall(fig,'type','axes');
 num = length(axes);
 
 if num == subplots
-    set(fig, 'Name', ['SNR (', date, ')']);  %set figure title
     color = colorbar;   %Insert colorbar
     set(color, 'Position', [.924 .11 .0381 .8150])
     for i = 1:num       %Narrow diagrams

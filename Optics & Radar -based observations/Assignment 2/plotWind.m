@@ -1,4 +1,4 @@
-function plotWind(data, repeat, coding_type, date, subplots)
+function plotWind(data, repeat, coding_type, subplots)
 
 %% structure of a data:
 %  - UT
@@ -41,7 +41,6 @@ axes = findall(fig,'type','axes');
 num = length(axes);
 
 if num == subplots
-    set(fig, 'Name', ['Horizontal Wind Velocity [m/s] (', date, ')']);  %set figure title
     color = colorbar;   %Insert colorbar
     set(color, 'Position', [.924 .11 .0381 .8150])
     for i = 1:num       %Narrow diagrams
@@ -64,7 +63,6 @@ axes = findall(fig,'type','axes');
 num = length(axes);
 
 if num == subplots
-    set(fig, 'Name', ['Horizontal Wind Direction [deg] (', date, ')']);  %set figure title
     color = colorbar;   %Insert colorbar
     set(color, 'Position', [.924 .11 .0381 .8150])
     for i = 1:num       %Narrow diagrams
