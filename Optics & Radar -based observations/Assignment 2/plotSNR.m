@@ -1,4 +1,4 @@
-function plotSNR(data, repeat, plot_title)
+function[fig] = plotSNR(data, repeat, plot_title, subplot_arg1, subplot_arg2, subplot_arg3)
 
 %% structure of a data:
 %  - UT
@@ -19,13 +19,12 @@ for i = 1:length(time);
     SNR(:, i) = SNR_alt;                         %2d matrix
 end;
 
-figure
-pcolor(time, altitude, SNR)
+subplot(subplot_arg1, subplot_arg2, subplot_arg3);
+fig = pcolor(time, altitude, SNR)
 shading flat
 colormap jet
 title(plot_title)
 ylabel('Altitude [km]')
 xlabel('Time [UT]')
-colorbar('location', 'EastOutside')
 
 end
