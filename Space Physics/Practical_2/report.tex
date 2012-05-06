@@ -1,0 +1,202 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original header:
+%
+% This is a LaTeX version of the sample laboratory report
+% from Virginia Tech's copyrighted 08-09 CHEM 1045/1046 lab manual.
+% Reproduction of this one appendix section for academic purposes
+% should fall under fair use.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+%   FINAL VERSION
+\documentclass{article}
+
+\title{\textbf {Space Physics} \\ Practical 1\\ Aurora Borealis} % Title
+
+\def\authors{
+Ivan \v Sinkarenko\\
+Anuraj Rajendraprakash
+}
+\author{\authors}
+%\author{Ivan \textsc{Sinkarenko}} % Author name
+%\author{Anuraj \textsc{Rajendraprakash}} % Author name
+
+\usepackage{graphicx}
+\usepackage{fullpage}
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\centerline{Referee: Dr. Gabriella Stenberg}
+
+\vspace{10mm}
+\begin{figure}[h!]
+\centering
+\centerline{\includegraphics[width=\textwidth]{Figures/iss.jpg}}
+\label{fig:iss}
+\end{figure}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+\clearpage
+
+\tableofcontents
+
+\listoffigures
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1. Objectives
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+Polar lights, also known as Aurora Polaris, is the collective term for the aurora seen over the northern and southern poles of the Earth. They are referred to as northern lights (Aurora Borealis) and southern lights (Aurora Australis). Research of the polar lights has been carried out for many decades; there are many theories about how this spectacular display is created. \cite{Stenberg:2012ab}\\ 
+The primary objective of this practical was to understand the phenomena of auroras and be able to classify it according to different criteria. As a part of this assignment, it was also required to study and correlate the riometer and magnetometer data during the occurance of auroras.
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2. Classification
+%----------------------------------------------------------------------------------------
+
+\section{Classification}
+
+In order to better understand auroras they have to be classified into different categories according to different criteria. While classifying an aurora, the position of the observer is a significant parameter since an auroral display observed directly above the observer normally differs significantly in appearance to the same auroral display seen just a few kilometres away.\cite{Stenberg:2012ab}
+
+The \textit{International Aurora Atlas} classifies the auroras into different categories according to condition, structure, form, brightness index and colour. For a detailed description on the classification criteria of auroras, please refer to \cite{Stenberg:2012ab}.
+
+The images in Figure \ref{fig:Awowa1} and Figure \ref{fig:Awowa2} were taken from the Internet. 
+The aurora in Figure \ref{fig:Awowa1} has been classified as $a_4fR_2B2a$ because of the following reasons:
+
+\begin{itemize}
+\item \textbf{Condition}:  It has been classified as active $ a_4 $ because the aurora appeared as a whole and new form appeared after the previous one had faded away.
+\item \textbf{Qualifying Symbol}: It is fragmented in the upper left corner and hence it is fragmentary $f$.
+\item \textbf{Stucture}: The auroras has form which appears as rays aligned to the magnetic field. It also appears as a gigantic curtain or drapery. Hence it is classified as of type $R_2$.
+\item \textbf{Brightness and Colour}: The brightness index seems to be of type B2 and since the colour seen are green with patches of yellow and purple it is classified to be of type \textit{a}.
+\end{itemize}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[scale=1.8]{Figures/awowa2.jpg}
+\caption{Image of an aurora taken from the Internet.}
+\label{fig:Awowa1}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[scale=1.8]{Figures/awowa1.jpg}
+\caption{Another image taken from the Internet.}
+\label{fig:Awowa2}
+\end{minipage}
+\end{figure}
+
+The aurora in Figure \ref{fig:Awowa2} has been classified as $qHP3c$ because of the following reasons.
+
+\begin{itemize}
+\item \textbf{Condition}:  The aurora in Figure \ref{fig:Awowa2} appears to be quiet and hence it is of type $q$.
+\item \textbf{Stucture}: The aurora has no specific internal structure and has a uniform brightness and colour change only slightly from one side to the other. Hence it is of homogeneous $H$ type.
+\item \textbf{Brightness and Colour}: The light intensity is comparable with brightly moonlit cirrus clouds or cumulus cloud and so it is of type P3. Since the colour is green it is of type c.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3. Auroral Forecast
+%----------------------------------------------------------------------------------------
+
+\section{Auroral Forecast}
+
+The purpose of this part of the practical is to analyse data from different sensors and predict whether Aurora Borealis would be seen or not. However, by the time this report was being written (April 26, 2012) it was not possible to see the northern lights because it didn't get dark enough during the night time. For this reason, this section contains the analysis of the data taken from previous month and is compared to the images from the Auroral Large Imaging System (ALIS).
+\\
+The data for analysis was taken from March 28, 2012 because it was quite a spectacular Aurora that day. As a source of the images and the scientific data the website of Swedish Institute of Space Physics (IRF) was used. The scientific data implies magnetometer and riometer measurements.
+
+\subsection{Magnetometer}
+Magnetometer is often used to measure long-term and short-term variations. The Kiruna flux-gate magnetometers are used to measure short-term variations, which are due to electric currents flowing in the ionosphere and induced in the surface layers in the solid Earth. The time resolution for the data measurement of these particular sensors is 20 seconds. The key properties of the magnetic disturbance level are \cite{KivelsonRussell:1996isp}:
+
+\begin{itemize}
+\item K-indices: Quasi-logarithmic scale from 0 (very quiet) through 3 (moderately disturbed) to 9 (very disturbed).
+\item $A_p$ index: A linear, daily index ranging from 0 (very quiet) through 15 (moderately disturbed) to 400 (very disturbed).
+\item $A_E$ index: Index of auroral activity, derived from horizontal component of magnetic field variation at 10-12 auroral-zone observatories.
+\item $D_{st}$ index: Index of ring-current (and global magnetic storms), derived from near equator observatories.
+\end{itemize}
+
+The flux-gate data from Kiruna's magnetometers is calibrated against the absolute measurements each month. Afterwards, quiet days are identified and the K-indices are calculated. In the geomagnetic measurements disturbance variations might be a sign of an aurora.
+
+\subsection{Riometer}
+The Relative Ionosphere Opacity meters (riometers) are used to measure the absorption of radio-noise from the starts in the ionosphere and they operate at 25-50 MHz frequency. Radio waves of this frequency are absorbed at the altitude of 60-110 km if there is a significant number of electrons present in ionosphere.
+
+Riometers perform continuous observations of the noise-level and observe decreases in noise relative to the quite-day level when there is increased ionization due to the precipitation of the high energy electrons and protons. The typical auroral signature on a riogram is a sharp dip of few dB, followed by the slow regrowth. IRF has two riometers working at 30 and 38 MHz.
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=10cm]{Figures/magnetometer.png}
+\caption{Magnetogram for the 28th of March, 2012.}
+\label{fig:magnetometer}
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=9cm]{Figures/riometer.png}
+\caption{Riogram for the 28th of March, 2012.}
+\label{fig:riometer}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[htbp!]
+\centering
+\centerline{\includegraphics[width=\textwidth]{Figures/awowa.png}}
+\caption{ALIS images compilation between 20:30 and 22:30 of March 28, 2012. The time in the upper right corner of each single picture represent the time it was taken.}
+\label{fig:ALIS}
+\end{figure}
+
+\subsection{Analysis}
+The measurements taken from the archive for 28th of March are shown in the figures below, where Figure \ref{fig:magnetometer} represents magnetometer measurements and Figure \ref{fig:riometer} represents riogram.
+
+As it is seen in the magnetogram, there were quite some fluctuations from 00:00 to 08:00 at night of 28th of March. However, images are not recorded through the entire night because at the certain point it becomes too bright to see the aurora. Riometer has also some fluctuations during that time. Therefore, we can assume that there was a high probability of auroral display. However, to make sure that our assumptions are correct we decided to focus on the disturbances, occurred in the period from 20:00 to 22:00. The magnetometer clearly shows the variations in the magnetic field and the riometer has a dip, followed by the ramp of magnetic field recovery. Based on this observations, we conclude that there should have been a strong aurora during that period.
+
+To check if the predictions were correct or not the pictures from the archive were taken for the period we are interested in. Compilation of 12 images from ALIS is shown in Figure \ref{fig:ALIS}. According to the datagrams the auroral peak was around 21:00. On the ALIS images, the one taken at 20:51 is the brightest which is approximately at the same time as expected. To sum up, it is seen that the measurements reflect the real auroral probability correctly.
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4. Conclusions
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions}
+This practical helped us understand the phenomena of auroras more clearly. It also increased our knowledge about the different types of auroras that occur. During the experiment, datagrams from the magnetometer and riometer were compared to the images taken by ALIS. All the data was fetched from the IRF archives. The analysis showed that the highest probability of the aurora took place at the same time as there was the brightest aurora according to the images. As a result, we conclude that we have understood the principle how the predictions are made based on the data analysis and what processes are responsible for studied behaviour.
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{Stenberg:2012ab}
+Stenberg, G.  (2012).
+\newblock {\em Practical 1. Aurora Borealis}.
+\newblock Swedish Institute of Space Physics, Kiruna, Sweden.
+
+\bibitem{KivelsonRussell:1996isp}
+Kivelson M. ~G. and Russell C. ~T.  (1996).
+\newblock {\em Introduction to Space Physics}.
+\newblock Cambridge University Press, Melbourne, Australia.
+
+\end{thebibliography}
+
+\end{document}
