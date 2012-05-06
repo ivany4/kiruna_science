@@ -1,0 +1,1 @@
+Barker code - The idea of the Barker codes is to reduce high sidelobes allowing the small sidelobes to increase. The Barker codes are the 0, Pi binary phase-codes  that result in equal time-sidealobes.
