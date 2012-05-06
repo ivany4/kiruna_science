@@ -27,3 +27,4 @@ colormap jet
 title(plot_title)
 ylabel('Altitude [km]')
 xlabel('Time [UT]')
+colorbar('location', 'EastOutside')
