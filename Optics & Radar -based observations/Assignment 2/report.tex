@@ -21,6 +21,10 @@ Anuraj Rajendraprakash
 
 \usepackage{graphicx}
 \usepackage{fullpage}
+
+% load package with ``framed'' and ``numbered'' option.
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
 \begin{document}
 
 \maketitle % Insert the title, author and date
@@ -173,6 +177,77 @@ MST (mesosphere-stratosphere-troposphere) radars are applied to study winds, wav
 
 \subsection{Part 2B}
 
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/SNR_barker.png}
+\caption{SNR for Barker coding data.}
+\label{fig:SNR_barker}
+\end{minipage}
+%\hspace{0.5cm}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/SNR_complementary.png}
+\caption{SNR for complementary coding data.}
+\label{fig:SNR_complementary}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+\vspace{0.5cm}
+\centering
+\includegraphics[width=8cm]{Figures/SNR_uncoded.png}
+\caption{SNR for uncoded data.}
+\label{fig:SNR_uncoded}
+\end{minipage}
+\end{figure}
+
+
+
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_dir_barker.png}
+\caption{Horizontal wind direction with Barker coding data.}
+\label{fig:wind_dir_barker}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_vel_barker.png}
+\caption{Horizontal wind velocity with Barker coding data.}
+\label{fig:wind_vel_barker}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_dir_complementary.png}
+\caption{Horizontal wind direction with complementary coding data.}
+\label{fig:wind_dir_complementary}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_vel_complementary.png}
+\caption{Horizontal wind velocity with complementary coding data.}
+\label{fig:wind_vel_complementary}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_dir_uncoded.png}
+\caption{Horizontal wind direction with uncoded data.}
+\label{fig:wind_dir_uncoded}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_vel_uncoded.png}
+\caption{Horizontal wind velocity with uncoded data.}
+\label{fig:wind_vel_uncoded}
+\end{minipage}
+\end{figure}
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION 4. REFERENCES
 %----------------------------------------------------------------------------------------
@@ -192,11 +267,29 @@ Enmark, A.  (2012).
 
 \section{Appendix 2A. Matlab code of Part 2A}
 
+\subsection{Part2A.m}
+\lstinputlisting{Part2A.m}
+
+\subsection{plotSNR.m}
+\lstinputlisting{plotSNR.m}
+
 %----------------------------------------------------------------------------------------
 %	SECTION 6. Appendix 2B
 %----------------------------------------------------------------------------------------
 
 \section{Appendix 2B. Matlab code of Part 2B}
+
+\subsection{Part2B.m}
+\lstinputlisting{Part2B.m}
+
+\subsection{plotWind.m}
+\lstinputlisting{plotWind.m}
+
+\subsection{hypotenuse.m}
+\lstinputlisting{hypotenuse.m}
+
+\subsection{radToDeg.m}
+\lstinputlisting{radToDeg.m}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 7. Confirmation
