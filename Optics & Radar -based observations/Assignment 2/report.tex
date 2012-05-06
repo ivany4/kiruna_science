@@ -21,6 +21,10 @@ Anuraj Rajendraprakash
 
 \usepackage{graphicx}
 \usepackage{fullpage}
+
+% load package with ``framed'' and ``numbered'' option.
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
 \begin{document}
 
 \maketitle % Insert the title, author and date
@@ -153,6 +157,9 @@ In pulsed radar and sonar signal processing, an ambiguity function is a two-dime
 
 \subsection{Part 2A}
 
+The height resolution obtainable with atmospheric radar is limited by the need to transmit a pulse of finite length. Since atmospheric properties change significantly within a few 10s a pulse should be as short as possible. However, the strength of the signal obtained from the atmosphere is proportional to the pulse length. Since the signal should be as strong as possible to be easily detectable above the natural noise, the radar pulse should be as long as possible. In practice we must always choose some compromise between these two conflicting demands. \cite{Enmark:2012a2}
+
+
 \begin{figure}[htb]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
@@ -175,6 +182,77 @@ In pulsed radar and sonar signal processing, an ambiguity function is a two-dime
 
 \subsection{Part 2B}
 
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/SNR_barker.png}
+\caption{SNR for Barker coding data.}
+\label{fig:SNR_barker}
+\end{minipage}
+%\hspace{0.5cm}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/SNR_complementary.png}
+\caption{SNR for complementary coding data.}
+\label{fig:SNR_complementary}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+\vspace{0.5cm}
+\centering
+\includegraphics[width=8cm]{Figures/SNR_uncoded.png}
+\caption{SNR for uncoded data.}
+\label{fig:SNR_uncoded}
+\end{minipage}
+\end{figure}
+
+
+
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_dir_barker.png}
+\caption{Horizontal wind direction with Barker coding data.}
+\label{fig:wind_dir_barker}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_vel_barker.png}
+\caption{Horizontal wind velocity with Barker coding data.}
+\label{fig:wind_vel_barker}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_dir_complementary.png}
+\caption{Horizontal wind direction with complementary coding data.}
+\label{fig:wind_dir_complementary}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_vel_complementary.png}
+\caption{Horizontal wind velocity with complementary coding data.}
+\label{fig:wind_vel_complementary}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[htb]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_dir_uncoded.png}
+\caption{Horizontal wind direction with uncoded data.}
+\label{fig:wind_dir_uncoded}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/wind_vel_uncoded.png}
+\caption{Horizontal wind velocity with uncoded data.}
+\label{fig:wind_vel_uncoded}
+\end{minipage}
+\end{figure}
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION 4. REFERENCES
 %----------------------------------------------------------------------------------------
@@ -182,11 +260,23 @@ In pulsed radar and sonar signal processing, an ambiguity function is a two-dime
 \begin{thebibliography}{9}
 
 \bibitem{Enmark:2012a2}
-Enmark, A.  (2012).
+Enmark A.  (2012).
 \newblock {\em Assignment 2. Pulse Modulation Techniques}.
 \newblock Lule\aa \ University of Technology, Kiruna, Sweden.
 
+\bibitem{Skolnik:2001irs}
+Skolnik M. ~I.  (2001).
+\newblock {\em Introduction to Radar Systems}.
+\newblock The McGraw-Hill Companies, Inc., New York, United States.
+
+\bibitem{LevanonMozeson:2004rs}
+Levanon N. and Mozeson E. (2004).
+\newblock {\em Radar Signals}.
+\newblock John Wiley \& Sons, Inc., New Jersey, United States.
 \end{thebibliography}
+
+%http://www.mathworks.com/matlabcentral/
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 5. Appendix 2A
@@ -194,11 +284,29 @@ Enmark, A.  (2012).
 
 \section{Appendix 2A. Matlab code of Part 2A}
 
+\subsection{Part2A.m}
+\lstinputlisting{Part2A.m}
+
+\subsection{plotSNR.m}
+\lstinputlisting{plotSNR.m}
+
 %----------------------------------------------------------------------------------------
 %	SECTION 6. Appendix 2B
 %----------------------------------------------------------------------------------------
 
 \section{Appendix 2B. Matlab code of Part 2B}
+
+\subsection{Part2B.m}
+\lstinputlisting{Part2B.m}
+
+\subsection{plotWind.m}
+\lstinputlisting{plotWind.m}
+
+\subsection{hypotenuse.m}
+\lstinputlisting{hypotenuse.m}
+
+\subsection{radToDeg.m}
+\lstinputlisting{radToDeg.m}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 7. Confirmation
