@@ -64,15 +64,7 @@ ESRAD (ESrange RADar) is VHF MST radar located in northern Sweden (6756N, 2104E)
 
 \section{Part 1}
 
-In pulsed radar and sonar signal processing, an ambiguity function is a two-dimensional function of time delay and Doppler frequency $\chi(\tau,f)$ showing the distortion of a returned pulse due to the receiver matched filter[1] (commonly, but not exclusively, used in pulse compression radar) due to the Doppler shift of the return from a moving target. The ambiguity function is determined by the properties of the pulse and the matched filter, and not any particular target scenario.
-
-Autocorrelation is the cross-correlation of a signal with itself. Informally, it is the similarity between observations as a function of the time separation between them. It is a mathematical tool for finding repeating patterns, such as the presence of a periodic signal which has been buried under noise, or identifying the missing fundamental frequency in a signal implied by its harmonic frequencies. It is often used in signal processing for analysing functions or series of values, such as time domain signals.
-
-In order to have high range resolutions, the use of short pulses is important in radar applications. However there are several limitations to the use of short pulses. The bandwidth of a short pulse is large because the bandwidth is inversely proportional to the pulse width. A large bandwidth of the signal makes the radar system complex, places greater demand on the signal processing and increases the chances of interference with other electromagnetic signals. A large bandwidth also reduces the dynamic range of the receiver because the noise power is proportional to the bandwidth. Also the short pulses don't have high resolution in the doppler frequency measurement. Short pulses also places more demands on transmitter peak power. 
-
-Pulse compression is a technique which allows the radar to simultaneously achieve the energy of a long pulse and the resolution of a short pulse by avoiding the use of high peak power which is needed in high energy short duration pulse. In this method a long pulse is made to have the same bandwidth as a short pulse by modulation it in frequency or phase.
-
-\begin{figure}[htb]
+\begin{figure}[bth]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/long_pulse_data.png}
@@ -88,14 +80,22 @@ Pulse compression is a technique which allows the radar to simultaneously achiev
 \end{minipage}
 \end{figure}
 
-\begin{figure}[htb]
+In pulsed radar and sonar signal processing, an ambiguity function is a two-dimensional function of time delay and Doppler frequency $\chi(\tau,f)$ showing the distortion of a returned pulse due to the receiver matched filter[1] (commonly, but not exclusively, used in pulse compression radar) due to the Doppler shift of the return from a moving target. The ambiguity function is determined by the properties of the pulse and the matched filter, and not any particular target scenario.
+
+Autocorrelation is the cross-correlation of a signal with itself. Informally, it is the similarity between observations as a function of the time separation between them. It is a mathematical tool for finding repeating patterns, such as the presence of a periodic signal which has been buried under noise, or identifying the missing fundamental frequency in a signal implied by its harmonic frequencies. It is often used in signal processing for analysing functions or series of values, such as time domain signals.
+
+In order to have high range resolutions, the use of short pulses is important in radar applications. However there are several limitations to the use of short pulses. The bandwidth of a short pulse is large because the bandwidth is inversely proportional to the pulse width. A large bandwidth of the signal makes the radar system complex, places greater demand on the signal processing and increases the chances of interference with other electromagnetic signals. A large bandwidth also reduces the dynamic range of the receiver because the noise power is proportional to the bandwidth. Also the short pulses don't have high resolution in the doppler frequency measurement. Short pulses also places more demands on transmitter peak power. 
+
+Pulse compression is a technique which allows the radar to simultaneously achieve the energy of a long pulse and the resolution of a short pulse by avoiding the use of high peak power which is needed in high energy short duration pulse. In this method a long pulse is made to have the same bandwidth as a short pulse by modulation it in frequency or phase.
+
+
+\begin{figure}[tbh]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/short_pulse_data.png}
 \caption{Auto-correlation function of a short pulse.}
 \label{fig:short_pulse_data}
 \end{minipage}
-%\hspace{0.5cm}
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/short_pulse_3d.png}
@@ -104,16 +104,13 @@ Pulse compression is a technique which allows the radar to simultaneously achiev
 \end{minipage}
 \end{figure}
 
-Figure \ref{fig:long_pulse_data} and Figure \ref{fig:long_pulse_3d} show the autocorrelation and ambiguity function of a long pulse. For a square pulse response is centered around origin. There is no response outside the the width $\tau$, which is observed both in the autocorrelation and ambiguity function plots. The time delay measurement error is proportinal to the pulse width and the frequency measurement error is proportional to the inverse of the pulse width. Thus the frequency measurement accuracy for a long pulse would be good while the time delay measurement accuracy would be worse. \cite{Skolnik:2001irs}
-
-\begin{figure}[htb]
+\begin{figure}[tbh]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/lfm_data.png}
 \caption{Auto-correlation function of frequency coding with LFM.}
 \label{fig:lfm_data}
 \end{minipage}
-%\hspace{0.5cm}
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/lfm_3d.png}
@@ -122,18 +119,13 @@ Figure \ref{fig:long_pulse_data} and Figure \ref{fig:long_pulse_3d} show the aut
 \end{minipage}
 \end{figure}
 
-Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d} show the autocorrelation and ambiguity function of a short pulse. As it can be seen in Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d}, the response is centered around origin. There is no response outside the the pulse width $\tau$. Thus the frequency measurement accuracy for a long pulse would be worse while the time delay measurement accuracy would be good. \cite{Skolnik:2001irs}
-
-The Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the auto correlation and ambiguity function of the Linear Frequency Modulated (LFM) signal. In such a signal the time delay measurement accuracy is proportional to the inverse of the bandwidth and the frequency measurement accuracy is proportional to inverse of the pulse width.  The pulse width and the bandwidth are independant of each other and hence the time delay and frequency measurement accuracy are also independent of each other.
-
-\begin{figure}[htb]
+\begin{figure}[tbh]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/barker_data.png}
 \caption{Auto-correlation function of Barker coding (13).}
 \label{fig:barker_data}
 \end{minipage}
-%\hspace{0.5cm}
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/barker_3d.png}
@@ -142,8 +134,6 @@ The Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the auto correlat
 \end{minipage}
 \end{figure}
 
-The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the auto correlation and the ambiguity function plots of a long pulse compressed by barker coding. One of the ways of increasing the bandwidth of a long pulse for the purpose of pulse compression, is by changing the phase. A long pulse of duration T is divided in to N subpulses of width $\tau$. The bandwidth is increased by changing the phase of each subpulse. A common form of phase change is \textit{binary phase coding}, in which the phases are made either 0 or $\pi$ according to a specified criterion. If the 0 and $\pi$ phase selection are made at random then the time side lobes have higher magnitude. Barker codes are a set sequences of 0 and $\pi$ phases for the subpulses so that the side lobes have lower peak values. If the barker codes are used for the phases of the subpulses then all the time side lobes have equal magnitude. \cite{Skolnik:2001irs}. This is clearly observed in the Figures \ref{fig:barker_data} and \ref{fig:barker_3d}.
-
 \begin{figure}[htb]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
@@ -151,7 +141,6 @@ The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the auto co
 \caption{Auto-correlation function of complementary coding (7).}
 \label{fig:complementary_data}
 \end{minipage}
-%\hspace{0.5cm}
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/complementary_3d.png}
@@ -159,6 +148,17 @@ The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the auto co
 \label{fig:complementary_3d}
 \end{minipage}
 \end{figure}
+
+Figure \ref{fig:long_pulse_data} and Figure \ref{fig:long_pulse_3d} show the autocorrelation and ambiguity function of a long pulse. For a square pulse response is centered around origin. There is no response outside the the width $\tau$, which is observed both in the autocorrelation and ambiguity function plots. The time delay measurement error is proportinal to the pulse width and the frequency measurement error is proportional to the inverse of the pulse width. Thus the frequency measurement accuracy for a long pulse would be good while the time delay measurement accuracy would be worse. \cite{Skolnik:2001irs}
+
+
+Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d} show the autocorrelation and ambiguity function of a short pulse. As it can be seen in Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d}, the response is centered around origin. There is no response outside the the pulse width $\tau$. Thus the frequency measurement accuracy for a long pulse would be worse while the time delay measurement accuracy would be good. \cite{Skolnik:2001irs}
+
+The Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the auto correlation and ambiguity function of the Linear Frequency Modulated (LFM) signal. In such a signal the time delay measurement accuracy is proportional to the inverse of the bandwidth and the frequency measurement accuracy is proportional to inverse of the pulse width.  The pulse width and the bandwidth are independant of each other and hence the time delay and frequency measurement accuracy are also independent of each other.
+
+
+The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the auto correlation and the ambiguity function plots of a long pulse compressed by barker coding. One of the ways of increasing the bandwidth of a long pulse for the purpose of pulse compression, is by changing the phase. A long pulse of duration T is divided in to N subpulses of width $\tau$. The bandwidth is increased by changing the phase of each subpulse. A common form of phase change is \textit{binary phase coding}, in which the phases are made either 0 or $\pi$ according to a specified criterion. If the 0 and $\pi$ phase selection are made at random then the time side lobes have higher magnitude. Barker codes are a set sequences of 0 and $\pi$ phases for the subpulses so that the side lobes have lower peak values. If the barker codes are used for the phases of the subpulses then all the time side lobes have equal magnitude. \cite{Skolnik:2001irs}. This is clearly observed in the Figures \ref{fig:barker_data} and \ref{fig:barker_3d}.
+
 
 The auto correlation and the ambiguity function plot of a long pulse compressed with complementary coding is shown in Figure \ref{fig:complementary_data} and Figure \ref{fig:complementary_3d} respectively. Using the complementary codes for the phase selections is another method of achieving pulse compression. In this coding method, pairs of equal length phase-coded pulses are chosen so that the side lobes of the auto correlation function of one are the negative of the other. In complemenatary coding  the auto correlation function from the outputs of the two matched filters are added. This results in the algebraic sum of the side lobes being zero and the main response being 2N where N is the number of subpulses.
 
@@ -177,10 +177,13 @@ The auto correlation and the ambiguity function plot of a long pulse compressed 
 
 \subsection{Part 2A}
 
-The height resolution obtainable with atmospheric radar is limited by the need to transmit a pulse of finite length. Since atmospheric properties change significantly within a few 10s a pulse should be as short as possible. However, the strength of the signal obtained from the atmosphere is proportional to the pulse length. Since the signal should be as strong as possible to be easily detectable above the natural noise, the radar pulse should be as long as possible. In practice we must always choose some compromise between these two conflicting demands. \cite{Enmark:2012a2}
+When a weather radar is scanning in only one direction vertically, it obtains height resolution data along a vertical cut of the atmosphere.\cite{Wiki:2012wr} The height resolution obtainable with atmospheric radar is limited by the need to transmit a pulse of finite length. Since atmospheric properties change significantly within a few 10s a pulse should be as short as possible. However, the strength of the signal obtained from the atmosphere is proportional to the pulse length. Since the signal should be as strong as possible to be easily detectable above the natural noise, the radar pulse should be as long as possible. In practice we must always choose some compromise between these two conflicting demands. \cite{Enmark:2012a2}\\
+\\
+In this report, all the data plotted with Matlab was taken from the latest date available, that is 2008-10-20. Figure \ref{fig:height_res} shows the Signal-to-Noise Ratio (SNR) from two different data files. On the left side there is a 150 m height resolution and on the right it is 1200 m height resolution. It is clearly seen that lower height has greater amount of data. Radar pulses spread out as they move away from the radar station. This means that the region of air any given pulse is moving through is larger for areas farther away from the station, and smaller for nearby areas, decreasing resolution at far distances. Naturally, resolution can be improved by newer equipment.\cite{Wiki:2012wr} However, the average SNR for the 150 m height is lower than for the 1200 m because blue color dominates on the left, whereas blue and red amount is approximately equal on the right side.\\
+\\
+The gain in power is affected by the loss in resolution for the different altitudes. Therefore, it is more difficult to learn the environmental conditions on higher distances, because everything is smoothed out. Not only the coarser resolution of the radar blur the image but the sounding incorporate area that are echo free, thus extending the thunderstorm beyond its real boundaries.\cite{Wiki:2012wr}
 
-
-\begin{figure}[htb]
+\begin{figure}[bth]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/height_res.png}
 \caption{SNR data for 150 m and 1200 m height resolutions.}
@@ -234,6 +237,10 @@ Skolnik M. ~I.  (2001).
 Levanon N. and Mozeson E. (2004).
 \newblock {\em Radar Signals}.
 \newblock John Wiley \& Sons, Inc., New Jersey, United States.
+
+\bibitem{Wiki:2012wr}
+Wikipedia.org. (2012).
+\newblock {\em Weather Radar}.
 \end{thebibliography}
 
 %http://www.mathworks.com/matlabcentral/
