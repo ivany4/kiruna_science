@@ -1,14 +1,5 @@
 function plotSNR(data, repeat, plot_title, subplots)
 
-%% structure of a data:
-%  - UT
-%  - Altitude
-%  - Signal amplitude (linear)
-%  - Signal-to-noise ratio (SNR), dB
-%  - Zonal wind, m/s
-%  - Meridional wind, m/s
-%  - Vertical wind, m/s
-%%
 time = data(1:repeat:length(data), 1); %1st column in data
 altitude = data(1:repeat, 2);               %2nd column in data
 
