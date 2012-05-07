@@ -1,4 +1,4 @@
-function plotSNR(data, repeat, plot_title)
+function plotSNR(data, repeat, plot_title, subplots)
 
 %% structure of a data:
 %  - UT
@@ -19,13 +19,26 @@ for i = 1:length(time);
     SNR(:, i) = SNR_alt;                         %2d matrix
 end;
 
-figure
-pcolor(time, altitude, SNR)
+fig = figure(1000);
+axes = findall(fig,'type','axes');
+num = length(axes);
+subplot(1, subplots, num+1);
+pcolor(time, altitude, SNR);
 shading flat
 colormap jet
-title(plot_title)
 ylabel('Altitude [km]')
 xlabel('Time [UT]')
-colorbar('location', 'EastOutside')
+title(plot_title)
+axes = findall(fig,'type','axes');
+num = length(axes);
+
+if num == subplots
+    color = colorbar;   %Insert colorbar
+    set(color, 'Position', [.924 .11 .0381 .8150])
+    for i = 1:num       %Narrow diagrams
+        pos = get(axes(i), 'Position');
+        set(axes(i), 'Position', [pos(1) pos(2) 0.85*pos(3) pos(4)]);
+    end;
+end
 
 end
