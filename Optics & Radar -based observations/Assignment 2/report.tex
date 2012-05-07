@@ -21,6 +21,7 @@ Anuraj Rajendraprakash
 
 \usepackage{graphicx}
 \usepackage{fullpage}
+\usepackage{url}
 
 % load package with ``framed'' and ``numbered'' option.
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
@@ -63,6 +64,7 @@ ESRAD (ESrange RADar) is VHF MST radar located in northern Sweden (6756N, 2104E)
 %----------------------------------------------------------------------------------------
 
 \section{Part 1}
+\label{sec:part1}
 
 \begin{figure}[bth]
 \begin{minipage}[t]{0.5\linewidth}
@@ -196,12 +198,26 @@ The gain in power is affected by the loss in resolution for the different altitu
 
 \subsection{Part 2B}
 
+After selecting height resolution the pulse coding technique should be chosen to allow the effective height resolution to be reduced while retaining the echo-strength of a longer pulse. Figure \ref{fig:SNR_coding} has 3 color maps showing SNR for the Barker coding, complementary coding and uncoded data respectively. These techniques were already discussed in Section \ref{sec:part1}. The uncoded data on the right plot can be used as a reference. This plot has smallest variations among all three plots. The average SNR value on this plot floats around 10 dB with higher values in the bottom part and lower values in the upper right corner.\\
+\\
+The complementary coding plot has greater SNR magnitude variations, whereas Barker coding tries to flatten this variations (blue part is lighter, bottom part contains less orange and red colors). As explained in Section \ref{sec:part1}, Barker coding removes side lobe peaks by introducing small variations along the entire width apart from the origin. That is exactly what is seen on the figure.\\
+\\
+The height resolution in all three plots remains the same. Thus, the pulse compression technique affects mainly the SNR magnitude. The selection of the particular technique usually depends on the needs of the application. In our case, Barker code is preferred because it seems to have smoother changes throughout the plot.
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/SNR_coding.png}
 \caption{SNR for Barker coded, complementary coded and uncoded data.}
 \label{fig:SNR_coding}
 \end{figure}
+
+In the next step, it is necessary to analyze horizontal wind direction and velocity from given data files. In atmospheric and Earth sciences wind is specified by terms zonal and meridional, which are describe directions on a globe. Zonal means "along a latitude circle" or "in the west–east direction", while meridional means "along a meridian" or "in the north–south direction". The horizontal wind is the resultant of these two components. \cite{Wiki:2012zm}\\ The 0$^{\circ}$ angle of the wind corresponds to the Eastward direction. A positive angle value directs the wind northern-wards and a negative value corresponds to southern direction accordingly.\\
+\\
+Unfortunately, data for the zonal and meridional wind components is not complete. It is not expected for Figure \ref{fig:direction} to have any specific pattern, because the wind currents change very fast and are considered random in this assignment. From the figure it is seen that in the lower altitudes wind blows in the North-east direction, while in the higher altitudes in comes closer to the eastward direction.\\
+\\
+From Figure \ref{fig:direction} one can understand that in the lower altitudes, like 6 km, the wind is much weaker than at 10-12 km. Also in the higher altitudes wind velocity variations are more significant, whereas lower altitudes have almost uniform pattern.\\
+\\
+From both direction and velocity figures it is seen that complementary coding data files have the highest number of records. Barker coding is slightly worse, and uncoded data is very poor.
 
 \begin{figure}[htb]
 \centering
@@ -241,6 +257,13 @@ Levanon N. and Mozeson E. (2004).
 \bibitem{Wiki:2012wr}
 Wikipedia.org. (2012).
 \newblock {\em Weather Radar}.
+\newblock {\url{http://en.wikipedia.org/wiki/Weather_radar}}.
+
+\bibitem{Wiki:2012zm}
+Wikipedia.org. (2012).
+\newblock {\em Zonal and meridional}.
+\newblock {\url{http://en.wikipedia.org/wiki/Zonal_and_meridional}}.
+
 \end{thebibliography}
 
 %http://www.mathworks.com/matlabcentral/
