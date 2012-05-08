@@ -52,9 +52,16 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-MST (mesosphere-stratosphere-troposphere) radars are applied to study winds, waves, turbulence and in- stability in the atmosphere. They usually operate near 50 MHz and also called VHF radars (VHF-very high frequency band between 30 MHz and 300 MHz).\\
-\\
-ESRAD (ESrange RADar) is VHF MST radar located in northern Sweden (6756N, 2104E). It has been in near continuous operation since June 1996. The purpose of the radar is to provide information on the dynamic state of the atmosphere - winds, waves, turbulence and layering from the troposphere up to the lower thermosphere (1 km -100 km altitude). ESRAD operates at a frequency of 52 MHz corresponding to a wavelength of 5.77 m. The transmitter consists of 72 1-kW solid-state modules that are grouped into 12 6-kW power blocks. The resulting peak power output power is 72 kW and the maximum duty cycle is 5\%. Pulse repetition frequency rates from 100 Hz to 16 kHz are possible. Pulse lengths correspond to height resolutions between 150 m and 3 km. The radar is capable of pulse coding the transmitted signals using both Barker and complementary codes. The radar has 6 separate receivers for detection of backscattered signals from the atmosphere. The complex (in-phase and quadrature) data samples are recorded using a 12-channel data acquisition unit. The bandwidth of the separate receiving elements is 2 MHz. Multiple receivers allows post-detection beam-steering and full spectral analysis of the returned signal. The digital processing system is able to process up to 256 heights per sample and integrates up to 4096 pulse repetitions per sample. The antenna consists of a 12 x 12 phased array of 5-element Yagis, each being approximately 6 m high. The Yagis are spaced about 4 m apart (corresponding to 0.7 times the radar wavelength). \cite{Enmark:2012a2}
+MST (mesosphere-stratosphere-troposphere) radars are applied to study winds, waves, turbulence and in-stability in the atmosphere. They usually operate near 50 MHz and also called VHF radars (VHF-very high frequency band between 30 MHz and 300 MHz).
+
+ESRAD (ESrange RADar) is VHF MST radar located in northern Sweden (6756N, 2104E). The purpose of the radar is to provide information on the dynamic state of the atmosphere - winds, waves, turbulence and layering from the troposphere up to the lower thermosphere (1 km -100 km altitude). ESRAD operates at a frequency of 52 MHz corresponding to a wavelength of 5.77 m. The transmitter consists of 72 1-kW solid-state modules that are grouped into 12 6-kW power blocks. The resulting peak power output power is 72 kW and the maximum duty cycle is 5\%. Pulse repetition frequency rates from 100 Hz to 16 kHz are possible. Pulse lengths correspond to height resolutions between 150 m and 3 km. The radar is capable of pulse coding the transmitted signals using both Barker and complementary codes. The radar has 6 separate receivers for detection of backscattered signals from the atmosphere. \cite{Enmark:2012a2}.
+
+This assignment was carried out in order to analyse and understand the data from ESRAD MST Radar. Data from the ESRAD MST Radar was provided for the assignment. The central objective of the assignment was to observe the height resolution obtained from the given data. The height resolution obtainable with atmospheric radar is limited by the need to transmit a pulse of finite length. Since atmospheric properties change significantly within a few 10s a pulse should be as short as possible. However, the strength of the signal obtained from the atmosphere is proportional to the pulse length. Since the signal should be as strong as possible to be easily detectable above the natural noise, the radar pulse should be as long as possible. In practice we must always choose some compromise between these two conflicting demands.
+
+In order to the height resolution analysis it is important to understand the auto correlation and ambiguity functions and use it to study and compare the properties of different types of signals like long pulses, short pulses, phase coding with Barker codes and complementary codes, and frequency coding with LFM. This is carried out in the first part of the assignment.
+
+The second part of the assignment has two subparts. The first part involves the analysis of the height resolution from the given data without any pulse coding techniques. In the second subpart the anaylysis of height resolution of the given data with pulse coding is carried out. 
+
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2. Part 1
@@ -301,7 +308,8 @@ Wikipedia.org. (2012).
 %----------------------------------------------------------------------------------------
 \newpage
 \section{Confirmation of Participation}
-This is to confirm that the members of this team participated on the investigation of the required information to solve the assignment, generated their code to perform the calculation and discussed the results.\\
+
+This is to confirm that the members of this team participated on the investigation of the required information to solve the assignment, generated their code to perform the calculation and discussed the results.\\
 \vspace{2cm}
 \newline
 \line(1,0){200}\\
