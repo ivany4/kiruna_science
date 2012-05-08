@@ -184,7 +184,7 @@ The auto correlation and the ambiguity function plot of a long pulse compressed 
 
 When a weather radar is scanning in only one direction vertically, it obtains height resolution data along a vertical cut of the atmosphere.\cite{Wiki:2012wr} The height resolution obtainable with atmospheric radar is limited by the need to transmit a pulse of finite length. Since atmospheric properties change significantly within a few 10s a pulse should be as short as possible. However, the strength of the signal obtained from the atmosphere is proportional to the pulse length. Since the signal should be as strong as possible to be easily detectable above the natural noise, the radar pulse should be as long as possible. In practice we must always choose some compromise between these two conflicting demands. \cite{Enmark:2012a2}\\
 \\
-In this report, all the data plotted with Matlab was taken from the latest date available, that is 2008-10-20. Figure \ref{fig:height_res} shows the Signal-to-Noise Ratio (SNR) from two different data files. On the left side there is a 150 m height resolution and on the right it is 1200 m height resolution. It is clearly seen that lower height has greater amount of data. Radar pulses spread out as they move away from the radar station. This means that the region of air any given pulse is moving through is larger for areas farther away from the station, and smaller for nearby areas, decreasing resolution at far distances. Naturally, resolution can be improved by newer equipment.\cite{Wiki:2012wr} However, the average SNR for the 150 m height is lower than for the 1200 m because blue color dominates on the left, whereas blue and red amount is approximately equal on the right side.\\
+In this report, all the data plotted with Matlab was taken from the latest date available, that is 2008-10-15. Figure \ref{fig:height_res} shows the Signal-to-Noise Ratio (SNR) from two different data files. On the left side there is a 150 m height resolution and on the right it is 1200 m height resolution. It is clearly seen that lower height has greater amount of data. Radar pulses spread out as they move away from the radar station. This means that the region of air any given pulse is moving through is larger for areas farther away from the station, and smaller for nearby areas, decreasing resolution at far distances. Naturally, resolution can be improved by newer equipment.\cite{Wiki:2012wr} However, the average SNR for the 150 m height is lower than for the 1200 m because deep blue color dominates on the left, whereas blue, cyan and orange amount is approximately equal on the right side.\\
 \\
 The gain in power is affected by the loss in resolution for the different altitudes. Therefore, it is more difficult to learn the environmental conditions on higher distances, because everything is smoothed out. Not only the coarser resolution of the radar blur the image but the sounding incorporate area that are echo free, thus extending the thunderstorm beyond its real boundaries.\cite{Wiki:2012wr}
 
@@ -211,29 +211,28 @@ The gain in power is affected by the loss in resolution for the different altitu
 
 
 
-After selecting height resolution the pulse coding technique should be chosen to allow the effective height resolution to be reduced while retaining the echo-strength of a longer pulse. Figure \ref{fig:SNR_coding} has 3 color maps showing SNR for the Barker coding, complementary coding and uncoded data respectively. These techniques were already discussed in Section \ref{sec:part1}. The uncoded data on the right plot can be used as a reference. This plot has smallest variations among all three plots. The average SNR value on this plot floats around 10 dB with higher values in the bottom part and lower values in the upper right corner.\\
+After selecting height resolution the pulse coding technique should be chosen to allow the effective height resolution to be reduced while retaining the echo-strength of a longer pulse. Figure \ref{fig:SNR_coding} has 3 color maps showing SNR for the Barker coding, complementary coding and uncoded data respectively. These techniques were already discussed in Section \ref{sec:part1}. The uncoded data on the right plot can be used as a reference. This plot has smallest variations among all three plots. The average SNR value on this plot floats at few dB with higher values in the bottom part and lower values in the upper right corner.\\
 
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.9\textwidth]{Figures/velocity.png}
 \caption{Horizontal wind velocity [m/s] for Barker coded, complementary coded and uncoded data.}
-\label{fig:direction}
+\label{fig:velocity}
 \end{figure}
 
 
 The complementary coding plot has greater SNR magnitude variations, whereas Barker coding tries to flatten this variations (blue part is lighter, bottom part contains less orange and red colors). As explained in Section \ref{sec:part1}, Barker coding removes side lobe peaks by introducing small variations along the entire width apart from the origin. That is exactly what is seen on the figure.\\
 \\
-The height resolution in all three plots remains the same. Thus, the pulse compression technique affects mainly the SNR magnitude. The selection of the particular technique usually depends on the needs of the application. In our case, Barker code is preferred because it seems to have smoother changes throughout the plot.
-
-
+The height resolution in all three plots remains the same. Thus, the pulse compression technique affects mainly the SNR magnitude. The selection of the particular technique usually depends on the needs of the application. In our case, Barker code is preferred because it seems to have smoother changes throughout the plot.\\
+\\
 In the next step, it is necessary to analyze horizontal wind direction and velocity from given data files. In atmospheric and Earth sciences wind is specified by terms zonal and meridional, which are describe directions on a globe. Zonal means "along a latitude circle" or "in the west–east direction", while meridional means "along a meridian" or "in the north–south direction". The horizontal wind is the resultant of these two components. \cite{Wiki:2012zm}\\ The 0$^{\circ}$ angle of the wind corresponds to the Eastward direction. A positive angle value directs the wind northern-wards and a negative value corresponds to southern direction accordingly.\\
 \\
-Unfortunately, data for the zonal and meridional wind components is not complete. It is not expected for Figure \ref{fig:direction} to have any specific pattern, because the wind currents change very fast and are considered random in this assignment. From the figure it is seen that in the lower altitudes wind blows in the North-east direction, while in the higher altitudes in comes closer to the eastward direction.\\
+Unfortunately, data for the zonal and meridional wind components is not complete. It is not expected for Figure \ref{fig:direction} to have any specific pattern, because the wind currents change very fast and are considered random in this assignment. From the figure it is seen that in the lower altitudes wind blows more in the south-east direction, at the altitude of 5 km it is more to the east, while in varies between south-east and east and sometimes changes to north direction.\\
 \\
-From Figure \ref{fig:direction} one can understand that in the lower altitudes, like 6 km, the wind is much weaker than at 10-12 km. Also in the higher altitudes wind velocity variations are more significant, whereas lower altitudes have almost uniform pattern.\\
+From Figure \ref{fig:velocity} one can understand that in the lower altitudes, up to 8 km, the wind is much weaker than at 10-12 km. Also in the higher altitudes wind velocity variations are more significant, whereas lower altitudes have almost uniform pattern. Barker coding plot has smoother velocity variations than other plots.\\
 \\
-From both direction and velocity figures it is seen that complementary coding data files have the highest number of records. Barker coding is slightly worse, and uncoded data is very poor.
+From both direction and velocity figures it is seen that complementary coding and Barker coding data files have the highest number of records. Uncoded data seems to be slightly poorer.
 
 
 %----------------------------------------------------------------------------------------
