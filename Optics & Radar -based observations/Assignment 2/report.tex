@@ -58,7 +58,7 @@ ESRAD (ESrange RADar) is VHF MST radar located in northern Sweden (67$^{\circ}$5
 \\
 This assignment was carried out in order to analyze and understand the data from ESRAD MST Radar. Data from the ESRAD MST Radar was provided for the assignment. The central objective of the assignment was to observe the height resolution obtained from the given data. The height resolution obtainable with atmospheric radar is limited by the need to transmit a pulse of finite length. Since atmospheric properties change significantly within a few 10s a pulse should be as short as possible. However, the strength of the signal obtained from the atmosphere is proportional to the pulse length. Since the signal should be as strong as possible to be easily detectable above the natural noise, the radar pulse should be as long as possible. In practice we must always choose some compromise between these two conflicting demands.\\
 \\
-In order to the height resolution analysis it is important to understand the auto correlation and ambiguity functions and use it to study and compare the properties of different types of signals like long pulses, short pulses, phase coding with Barker codes and complementary codes, and frequency coding with Linear Frequency Modulation (LFM). This is carried out in the first part of the assignment.\\
+In order to the height resolution analysis it is important to understand the autocorrelation and ambiguity functions and use it to study and compare the properties of different types of signals like long pulses, short pulses, phase coding with Barker codes and complementary codes, and frequency coding with Linear Frequency Modulation (LFM). This is carried out in the first part of the assignment.\\
 \\
 The second part of the assignment has two subparts. The first part involves the analysis of the height resolution from the given data without any pulse coding techniques. In the second subpart the analysis of Barker and complementary coding techniques, based on given data for Signal-to-Noise ratio (SNR) and horizontal wind velocity and direction, is carried out. 
  
@@ -82,7 +82,7 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/long_pulse_data.png}
-\caption{Auto-correlation function of a long pulse.}
+\caption{Autocorrelation function of a long pulse.}
 \label{fig:long_pulse_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
@@ -97,7 +97,7 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/short_pulse_data.png}
-\caption{Auto-correlation function of a short pulse.}
+\caption{Autocorrelation function of a short pulse.}
 \label{fig:short_pulse_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
@@ -112,7 +112,7 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/lfm_data.png}
-\caption{Auto-correlation function of frequency coding with LFM.}
+\caption{Autocorrelation function of frequency coding with LFM.}
 \label{fig:lfm_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
@@ -127,7 +127,7 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/barker_data.png}
-\caption{Auto-correlation function of Barker coding (13).}
+\caption{Autocorrelation function of Barker coding (13).}
 \label{fig:barker_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
@@ -142,7 +142,7 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/complementary_data.png}
-\caption{Auto-correlation function of complementary coding (7).}
+\caption{Autocorrelation function of complementary coding (7).}
 \label{fig:complementary_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
@@ -156,19 +156,16 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 In order to have high range resolutions, the use of short pulses is important in radar applications. However there are several limitations to the use of short pulses. The bandwidth of a short pulse is large because the bandwidth is inversely proportional to the pulse width. A large bandwidth of the signal makes the radar system complex, places greater demand on the signal processing and increases the chances of interference with other electromagnetic signals. A large bandwidth also reduces the dynamic range of the receiver because the noise power is proportional to the bandwidth. Also the short pulses don't have high resolution in the doppler frequency measurement. Short pulses also places more demands on transmitter peak power. \cite{Skolnik:2001irs}\\
 \\
 Pulse compression is a technique which allows the radar to simultaneously achieve the energy of a long pulse and the resolution of a short pulse by avoiding the use of high peak power which is needed in high energy short duration pulse. In this method a long pulse is made to have the same bandwidth as a short pulse by modulation it in frequency or phase. \cite{Skolnik:2001irs}\\
-
+\\
 Figure \ref{fig:long_pulse_data} and Figure \ref{fig:long_pulse_3d} show the autocorrelation and ambiguity function of a long pulse. For a square pulse response is centered around origin. There is no response outside the the width $\tau$, which is observed both in the autocorrelation and ambiguity function plots. The time delay measurement error is proportinal to the pulse width and the frequency measurement error is proportional to the inverse of the pulse width. Thus the frequency measurement accuracy for a long pulse would be good while the time delay measurement accuracy would be worse. \cite{Skolnik:2001irs}\\
-
+\\
 Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d} show the autocorrelation and ambiguity function of a short pulse. As it can be seen in Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d}, the response is centered around origin. There is no response outside the the pulse width $\tau$. Thus the frequency measurement accuracy for a long pulse would be worse while the time delay measurement accuracy would be good. \cite{Skolnik:2001irs}\\
-
-Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the auto correlation and ambiguity function of the LFM signal. In such a signal the time delay measurement accuracy is proportional to the inverse of the bandwidth and the frequency measurement accuracy is proportional to inverse of the pulse width.  The pulse width and the bandwidth are independant of each other and hence the time delay and frequency measurement accuracy are also independent of each other.\\
-
-
-
-The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the auto correlation and the ambiguity function plots of a long pulse compressed by barker coding. One of the ways of increasing the bandwidth of a long pulse for the purpose of pulse compression, is by changing the phase. A long pulse of duration T is divided in to N subpulses of width $\tau$. The bandwidth is increased by changing the phase of each subpulse. A common form of phase change is \textit{binary phase coding}, in which the phases are made either 0 or $\pi$ according to a specified criterion. If the 0 and $\pi$ phase selection are made at random then the time side lobes have higher magnitude. Barker codes are a set sequences of 0 and $\pi$ phases for the subpulses so that the side lobes have lower peak values. If the barker codes are used for the phases of the subpulses then all the time side lobes have equal magnitude. \cite{Skolnik:2001irs}. This is clearly observed in the Figures \ref{fig:barker_data} and \ref{fig:barker_3d}.\\
-
-
-The auto correlation and the ambiguity function plot of a long pulse compressed with complementary coding is shown in Figure \ref{fig:complementary_data} and Figure \ref{fig:complementary_3d} respectively. Using the complementary codes for the phase selections is another method of achieving pulse compression. In this coding method, pairs of equal length phase-coded pulses are chosen so that the side lobes of the auto correlation function of one are the negative of the other. In complemenatary coding  the auto correlation function from the outputs of the two matched filters are added. This results in the algebraic sum of the side lobes being zero and the main response being 2N where N is the number of subpulses.
+\\
+Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the autocorrelation and ambiguity function of the LFM signal. In such a signal the time delay measurement accuracy is proportional to the inverse of the bandwidth and the frequency measurement accuracy is proportional to inverse of the pulse width.  The pulse width and the bandwidth are independant of each other and hence the time delay and frequency measurement accuracy are also independent of each other.\\
+\\
+The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the autocorrelation and the ambiguity function plots of a long pulse compressed by barker coding. One of the ways of increasing the bandwidth of a long pulse for the purpose of pulse compression, is by changing the phase. A long pulse of duration T is divided in to N subpulses of width $\tau$. The bandwidth is increased by changing the phase of each subpulse. A common form of phase change is \textit{binary phase coding}, in which the phases are made either 0 or $\pi$ according to a specified criterion. If the 0 and $\pi$ phase selection are made at random then the time side lobes have higher magnitude. Barker codes are a set sequences of 0 and $\pi$ phases for the subpulses so that the side lobes have lower peak values. If the barker codes are used for the phases of the subpulses then all the time side lobes have equal magnitude. \cite{Skolnik:2001irs}. This is clearly observed in the Figures \ref{fig:barker_data} and \ref{fig:barker_3d}.\\
+\\
+The autocorrelation and the ambiguity function plot of a long pulse compressed with complementary coding is shown in Figure \ref{fig:complementary_data} and Figure \ref{fig:complementary_3d} respectively. Using the complementary codes for the phase selections is another method of achieving pulse compression. In this coding method, pairs of equal length phase-coded pulses are chosen so that the side lobes of the autocorrelation function of one are the negative of the other. In complemenatary coding  the autocorrelation function from the outputs of the two matched filters are added. This results in the algebraic sum of the side lobes being zero and the main response being 2N where N is the number of subpulses.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3. Part 2
@@ -248,7 +245,7 @@ From both direction and velocity figures it is seen that complementary coding an
 \newpage
 \section{Conclusion}
 
-This assignment helped us gain a clear understanding of the auto correlation function and the ambiguity function. We also found out the the autocorrelation and ambiguity functions of various types of radar signals. This helped in getting a thorough idea of why certain types of signals are used in radar signals. The second part of the assignment helped us understand how radar is used for weather analysis.
+This assignment helped us gain a clear understanding of the autocorrelation function and the ambiguity function. We also analyzed the autocorrelation and ambiguity functions of various types of radar signals. This helped in getting a thorough idea of why certain types of signals are used in radar applications. The second part of the assignment helped us understand how radar is used for the weather analysis and how the data depends on different altitudes as well as the pulse compression techniques used.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 5. REFERENCES
