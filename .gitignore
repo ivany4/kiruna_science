@@ -1,62 +1,13 @@
+*.aux
 
-Space Physics/Practical 1/report.aux
+*.log
 
-Space Physics/Practical 1/report.log
+*.synctex.gz
 
-Space Physics/Practical 1/report.synctex.gz
-
-Space Physics/Practical 1/TSWLatexianTemp_report.aux
-
-Space Physics/Practical 1/TSWLatexianTemp_report.lof
-
-Space Physics/Practical 1/TSWLatexianTemp_report.pdf
-
-Space Physics/Practical 1/TSWLatexianTemp_report.log
-
-Space Physics/Practical 1/TSWLatexianTemp_report.tex
-
-Space Physics/Practical 1/TSWLatexianTemp_report.toc
-
-Space Physics/Practical 1/report.pdf
-
-Space Physics/Practical 1/TSWLatexianTemp_000030.aux
-
-Space Physics/Practical 1/TSWLatexianTemp_000030.log
-
-Space Physics/Practical 1/TSWLatexianTemp_000030.pdf
-
-Space Physics/Practical 1/TSWLatexianTemp_000030.tex
-
-Space Physics/Practical 1/TSWLatexianTemp_000030.toc
-
-Space Physics/Practical 1/TSWLatexianTemp_000032.aux
-
-Space Physics/Practical 1/TSWLatexianTemp_000032.lof
-
-Space Physics/Practical 1/TSWLatexianTemp_000032.log
-
-Space Physics/Practical 1/TSWLatexianTemp_000032.pdf
-
-Space Physics/Practical 1/TSWLatexianTemp_000032.tex
-
-Space Physics/Practical 1/TSWLatexianTemp_000033.aux
-
-Space Physics/Practical 1/TSWLatexianTemp_000032.toc
-
-Space Physics/Practical 1/TSWLatexianTemp_000033.lof
-
-Space Physics/Practical 1/TSWLatexianTemp_000033.pdf
-
-Space Physics/Practical 1/TSWLatexianTemp_000033.tex
-
-Space Physics/Practical 1/TSWLatexianTemp_000033.toc
-
-Space Physics/Practical 1/report.pdf
-
-Optics & Radar -based observations/Assignment 2/report.pdf
+*report.pdf
 
 TSWLatexian*
 
 *.m~
 
-.DS_Store
+*.DS_Store
