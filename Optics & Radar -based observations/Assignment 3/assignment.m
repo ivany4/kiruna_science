@@ -15,7 +15,7 @@ N = 64;
 
 for i = 1:length(d)
     ratio = lambda/d(i);
-%     ratio = 2;
+
     for j = 1:length(theta)
         Ea(i,j) = sin(N*pi*ratio*sin(theta(j)))/sin(pi*ratio*sin(theta(j)));
     end
@@ -48,3 +48,4 @@ for i = 1:length(N)
     ylabel('Field intensity E_a');
     title(['Number of elements N = ', int2str(N(i))]);
 end
+

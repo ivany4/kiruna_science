@@ -78,8 +78,7 @@ The field-intensity pattern has zeros when the numerator is zero. This occurs wh
 
 \section{Discussion}
 
-The Figure \ref{fig:ratio} shows the variation of the radiation pattern of a phased array antenna when the ratio between the wavelength(\textit{$\lambda$}) and distance between individual elements(\textit{i.e. 'd'}) varies. The ratio is varied from when the wavelength is four times the distance between the individual elements to when the ratio between them is 0.44. \\
-If $d<\lambda$ then there is only one main lobe at $\delta$ = 0. If $d>\lambda$ then there are side lobes at $\delta = sin^{-1}(\lambda/d)$ with amplitudes similar to the main lobe.The width of the main lobe $sin^{-1}(\lambda/N_{d})$
+The Figure \ref{fig:ratio} shows the variation of the radiation pattern of a phased array antenna when the ratio between the wavelength($\lambda$) and distance between individual elements(\textit{i.e. 'd'}) varies. The ratio is varied from when the wavelength is four times the distance between the individual elements to when the ratio between them is 0.44. If $d<\lambda$ then there is only one main lobe at $\delta $ = 0. If $d>\lambda $ then there are side lobes at $\delta = sin^{-1}(\lambda/d)$ with amplitudes similar to the main lobe. 
 
 \begin{figure}[tbh]
 \centering
@@ -90,15 +89,28 @@ If $d<\lambda$ then there is only one main lobe at $\delta$ = 0. If $d>\lambda$ 
 
 \begin{figure}[tbh]
 \centering
+\includegraphics[scale=0.8]{Figures/ratio_1.png}
+\caption{Variation of the radiation pattern as zenith angle varies with $\lambda/d$ ratio as 1}
+\label{fig:ratio_1}
+\end{figure}
+
+As shown in Figure \ref{fig:ratio_1}, when $\lambda = d$ there is one main lobe at $\delta = 0$ and lobes at $\delta =  \pm 90^{\circ}$.  In practice however the antenna elements are not isotropic and the radiation at $\pm 90^{\circ}$ is negligible. The width of the main lobe $sin^{-1}(\lambda/N)$. \cite{Rottger:2000ip}. The maxima other than the main lobe are called grating lobes. They are generally undesirable in that they can cause ambiguities by being mistaken for the response of a target in the main beam. Grating lobes can be avoided if the spacing \textit{d} between elements is equal to or less than $\lambda$. \cite{Skolnik:2001irs}
+
+\begin{figure}[tbh]
+\centering
 \includegraphics[width=\textwidth]{Figures/elements.png}
 \caption{Variation of the radiation pattern of a phased array antenna when the number of elements of the antenna varies.}
 \label{fig:elements}
 \end{figure}
 
+The Figure \ref{fig:elements} shows how the radiation pattern varies when the number of elements in the array is varied from $N = 2$ to $N = 62$. It can be clearly seen that the width of the lobes varies inversely with the number of elements in the array. As the number of elements in the array increases the width of the lobes decreases.
+\clearpage
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION 4. CONCLUSION
 %----------------------------------------------------------------------------------------
-\newpage
+%\newpage
 \section{Conclusion}
 
 %----------------------------------------------------------------------------------------
