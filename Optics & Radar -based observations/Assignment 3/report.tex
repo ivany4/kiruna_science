@@ -73,12 +73,12 @@ The first factor is a sine wave of frequency $\omega$ with a phase shift $(N-1)\
 The field-intensity pattern has zeros when the numerator is zero. This occurs when $N\pi(d/\lambda)\,sin\,\theta=0,\:\pm\pi,\:\pm 2\pi,\:...,\:\pm n\pi$, where $n$ = integer. The denominator, on the other hand, is zero whenever $\pi(d/\lambda)\,sin\,\theta=0,\:\pm\pi,\:\pm 2\pi,\:...,\:\pm n\pi$. When the denominator is zero, it is seen that the numerator is also zero, and the value of $|E_a(\theta)|$ = 0/0 is indeterminate. By applying L'Hopital's rule it is found that $|E_a(\theta)|$ is a maximum and is equal to $N$ when $sin\,\theta=\pm n\lambda/d$. The maximum at $\theta$ = 0 defines the main beam of the field-intensity pattern. The other maxima are called \emph{grating lobes} and are of the same magnitude as the main beam. Grating lobes can be avoided if the spacing d between elements is equal to or less than $\lambda$.      
 
 %----------------------------------------------------------------------------------------
-%	SECTION 1. Discussion
+%	SECTION 2. Discussion
 %----------------------------------------------------------------------------------------
 
 \section{Discussion}
 
-The Figure \ref{fig:ratio} shows the variation of the radiation pattern of a phased array antenna when the ratio between the wavelength($\lambda$) and distance between individual elements(\textit{i.e. 'd'}) varies. The ratio is varied from when the wavelength is four times the distance between the individual elements to when the ratio between them is 0.44. If $d<\lambda$ then there is only one main lobe at $\theta $ = 0. If $d>\lambda $ then there are side lobes at $\theta = sin^{-1}(\lambda/d)$ with amplitudes similar to the main lobe.\\
+Figure \ref{fig:ratio} shows the variation of the radiation pattern of a phased array antenna when the ratio between the wavelength($\lambda$) and distance between individual elements(\textit{i.e. 'd'}) varies. The ratio is varied from when the wavelength is four times the distance between the individual elements to when the ratio between them is 0.44. If $d<\lambda$ then there is only one main lobe at $\theta $ = 0. If $d>\lambda $ then there are side lobes at $\theta = sin^{-1}(\lambda/d)$ with amplitudes similar to the main lobe.\\
 
 \begin{figure}[htb]
 \centering
@@ -89,7 +89,7 @@ The Figure \ref{fig:ratio} shows the variation of the radiation pattern of a pha
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\textwidth]{Figures/ratio_1.png}
+\includegraphics[width=0.6\textwidth]{Figures/ratio_1.png}
 \caption{Variation of the radiation pattern as zenith angle varies with $\lambda/d$ ratio as 1}
 \label{fig:ratio_1}
 \end{figure}
@@ -101,9 +101,9 @@ The Figure \ref{fig:ratio} shows the variation of the radiation pattern of a pha
 \label{fig:elements}
 \end{figure}
 
-As shown in Figure \ref{fig:ratio_1}, when $\lambda = d$ there is one main lobe at $\theta = 0$ and lobes at $\theta =  \pm 90^{\circ}$.  In practice however the antenna elements are not isotropic and the radiation at $\pm 90^{\circ}$ is negligible. The width of the main lobe $sin^{-1}(\lambda/Nd)$. \cite{Rottger:2000ip}. The maxima other than the main lobe are called grating lobes. They are generally undesirable in that they can cause ambiguities by being mistaken for the response of a target in the main beam. Grating lobes can be avoided if the spacing \textit{d} between elements is equal to or less than $\lambda$.\cite{Skolnik:2001irs}. As can be seen from the Figure \ref{fig:ratio} grating lobes appear at angles $sin^{-1}(n\frac{\lambda}{d})$ \cite{Rottger:2000ip}\\
+As shown in Figure \ref{fig:ratio_1}, when $\lambda = d$ there is one main lobe at $\theta = 0$ and lobes at $\theta =  \pm 90^{\circ}$.  In practice however the antenna elements are not isotropic and the radiation at $\pm 90^{\circ}$ is negligible. The width of the main lobe $sin^{-1}(\lambda/Nd)$. \cite{Rottger:2000ip}. The maxima other than the main lobe are called grating lobes. They are generally undesirable in that they can cause ambiguities by being mistaken for the response of a target in the main beam. Grating lobes can be avoided if the spacing \textit{d} between elements is equal to or less than $\lambda$.\cite{Skolnik:2001irs}. As can be seen from Figure \ref{fig:ratio} grating lobes appear at angles $sin^{-1}(n\frac{\lambda}{d})$ \cite{Rottger:2000ip}\\
 
-The Figure \ref{fig:elements} shows how the radiation pattern varies when the number of elements in the array is varied from $N = 2$ to $N = 62$. It can be clearly seen that the width of the lobes varies inversely with the number of elements in the array. As the number of elements in the array increases the width of the lobes decreases.\\
+Figure \ref{fig:elements} shows how the radiation pattern varies when the number of elements in the array is varied from $N = 2$ to $N = 62$. It can be clearly seen that the width of the lobes varies inversely with the number of elements in the array. As the number of elements in the array increases the width of the lobes decreases.\\
 
 Therefore, in order to design a good MST radar the number of array elements should be sufficiently large and by theory the distance between these elements should be near to the wavelength being used. If N is large enough then the first side lobe is $13.2 dB$ lower than the main beam maximum value.\cite{Skolnik:2001irs}\\
 
@@ -113,17 +113,19 @@ Thus while designing a radar for atmospheric research a trade off has to be made
 
 
 %----------------------------------------------------------------------------------------
-%	SECTION 4. CONCLUSION
+%	SECTION 3. CONCLUSION
 %----------------------------------------------------------------------------------------
 %\newpage
 \section{Conclusion}
 
 This assignment has helped us get an idea of the design parameters of a phased array radar.
 By varying the parameters that affect the design of a phased array antenna we observed how the radiation pattern varied. We learnt about the various techniques used for side lobe suppression in the radiation pattern. While doing this assignment we learnt about the trade off that has to be made between side lobe suppression and antenna gain in radars for MST weather applications. Finally we came to know about the parameters which are important while designing a practical phased array antenna.
-%----------------------------------------------------------------------------------------
-%	SECTION 5. REFERENCES
-%----------------------------------------------------------------------------------------
 
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4. REFERENCES
+%----------------------------------------------------------------------------------------
+\newpage
 \begin{thebibliography}{9}
 
 \bibitem{Enmark:2012a3}
@@ -157,7 +159,7 @@ Wikipedia.org. (2012).
 \lstinputlisting{assignment.m}
 
 %----------------------------------------------------------------------------------------
-%	SECTION 7. Confirmation
+%	SECTION 6. Confirmation
 %----------------------------------------------------------------------------------------
 \newpage
 \section{Confirmation of Participation}
