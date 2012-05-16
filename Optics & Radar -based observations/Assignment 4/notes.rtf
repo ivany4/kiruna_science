@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author IVANY4}}\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs24 \cf0 In doppler_files script:
+\b0 \
+Y - matrix of two columns (0 - left channel, 1 - right channel) containg waveform data. (rows are samples)\
+FS - sampling frequency\
+
+\fs26 f
+\fs20 c
+\fs24  - zero frequency (what we tune the radar to before taking the data)\
+zpad - length for the fft (fft for the matrix does many fft's for each column, taking a column as an array)\
+\
+\
+\
+
+\b In ranging_files:
+\b0 \
+s - what we get back\
+\
+2nd pulse canceller\
+subtract 2nd pulse from the first pulse to filter non moving objects. Apparently there are some trees which are not moving and have nearly 0 doppler shift, but they have some scatter and add the noise to the figure. It's called clutter subtraction. Used e.g. in aircraft radar.\
+There are some other ways to do it. You can subtract 10th pulse. Or you can subtract mean of n pulses.\
+\
+To see pulses type into command line:\
+
+\f1\fs26 >> read_data_RTI_Erasmus
+\f0\fs24 \
+
+\f1\fs26 >> figure(3);\
+>> plot(trig)\
+>> plot(s)\
+>> p = audioplayer(trig, FS);\
+>> play(p)\
+>> stop(p)\
+>> p = audioplayer(s, FS);\
+>> play(p)\
+>> stop(p)
+\f0\fs24 \
+\
+TODO:\
+1. Why 
+\f1\fs26 max_range = rr*N/2
+\f0\fs24  not 
+\f1\fs26 rr*N
+\f0\fs24 ?\
+2. Figure out other ways for clutter subtraction.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab708\pardirnatural
+\cf0 \expnd0\expndtw0\kerning0
+zpad is zeropadding. it\'92s bigger than number of samples (N). the fft function adds zeros when this amount is bigger. The purpose of having zero padding is that having larger number of samples decreases delta t of sampling, which increases frequency resolution and allows to study higher frequencies with the affordable frequency resolution without a threat to run into a aliasing.}
