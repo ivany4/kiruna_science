@@ -21,7 +21,7 @@ c = 3E8; %(m/s) speed of light
 Tp = 20E-3; %(s) pulse time
 N = Tp*FS; %# of samples per pulse
 fstart = 2260E6; %(Hz) LFM start frequency
-fstop = 2590E6; %(Hz) LFM stop frequency
+fstop = 5560E6; %(Hz) LFM stop frequency
 
 BW = fstop-fstart; %(Hz) transmit bandwidth
 f = linspace(fstart, fstop, N/2); %instantaneous transmit frequency

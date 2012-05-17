@@ -131,32 +131,49 @@ $zpad$ is zero padding, which should be bigger than the number of samples $N$. T
 
 \section{Range Radar Processing}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 3. CONCLUSION
-%----------------------------------------------------------------------------------------
-%\newpage
-\section{Conclusion}
+\subsection{Question 1}
+
+The difference between start and stop frequency is the bandwidth. The pulse width is inversely proportional to the bandwidth. Short pulse allows in better range resolution, however, its bandwidth is small, so the reflected power is small. In practical radars it is always a compromise to select decent bandwidth and range resolution.\\
+\\
+A large bandwidth also reduces the dynamic range of the receiver because the noise power is proportional to the bandwidth. Also the short pulses don't have high resolution in the doppler frequency measurement. \cite{Skolnik:2001irs}\\
+
+In Figure \ref{fig:bw_normal} the bandwidth is equal to initial bandwidth of 330 MHz. Thus, the plot has maximum range of 200 m. Figure \ref{fig:bw_reduced} contains RTI plot with bandwidth 33 MHz and Maximum range is increased by the factor of 10 accordingly. Figure \ref{fig:bw_increased} has maximum range of only 20 m, because its bandwidth is increased to 3,3 GHz.
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/bw_normal.png}
+\caption{RTI with 330 MHz bandwidth.}
+\label{fig:bw_normal}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/bw_reduced.png}
+\caption{RTI with 33 MHz bandwidth.}
+\label{fig:bw_reduced}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/bw_increased.png}
+\caption{RTI with 3,3 GHz bandwidth.}
+\label{fig:bw_increased}
+\end{minipage}
+\end{figure}
+
+\subsection{Question 2}
+\subsection{Question 3}
+\subsection{Question 4}
 
 %----------------------------------------------------------------------------------------
-%	SECTION 4. REFERENCES
+%	SECTION 3. REFERENCES
 %----------------------------------------------------------------------------------------
 \newpage
 \begin{thebibliography}{9}
-
-\bibitem{Enmark:2012a3}
-Enmark A.  (2012).
-\newblock {\em Assignment 3. Optimization of phased array antenna radiation pattern and array configuration}.
-\newblock Lule\aa \ University of Technology, Kiruna, Sweden.
 
 \bibitem{Skolnik:2001irs}
 Skolnik M. ~I.  (2001).
 \newblock {\em Introduction to Radar Systems}.
 \newblock The McGraw-Hill Companies, Inc., New York, United States.
-
-\bibitem{Rottger:2000ip}
-R\"ottger J.  (2000).
-\newblock {\em The Instrumental Principles of MST Radars and Incoherent Scatter Radars and The Configuration of Radar System Hardware}.
-\newblock Max Planck Institut F\"ur Aeronomie, Katlenburg-Lindau, Germany.
 
 \bibitem{DavenportWaters:2010dsp}
 Mark Davenport, Drew Waters (2010).
@@ -164,30 +181,6 @@ Mark Davenport, Drew Waters (2010).
 \newblock {\url{http://www.clear.rice.edu/elec431/projects95/radar/project.html}}.
 
 \end{thebibliography}
-
-
-%----------------------------------------------------------------------------------------
-%	SECTION 5. Appendix 1
-%----------------------------------------------------------------------------------------
-\newpage
-\section{Appendix 1. Matlab code}
-%\lstinputlisting{assignment.m}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 6. Confirmation
-%----------------------------------------------------------------------------------------
-\newpage
-\section{Confirmation of Participation}
-
-This is to confirm that the members of this team participated on the investigation of the required information to solve the assignment, generated their code to perform the calculation and discussed the results.\\
-\vspace{2cm}
-\newline
-\line(1,0){200}\\
-\authorivan\\
-\vspace{2cm}
-\newline
-\line(1,0){200}\\
-\authoranu\\
 
 
 \end{document}
