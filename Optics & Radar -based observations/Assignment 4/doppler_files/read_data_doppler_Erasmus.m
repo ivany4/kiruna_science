@@ -9,7 +9,7 @@
 
 
 %Process Doppler vs. Time Intensity (DTI) plot
-
+% close all;
 clear all;
 
 %read the raw data .wave file here
@@ -19,7 +19,7 @@ clear all;
 c = 3E8; %(m/s) speed of light
 
 %radar parameters
-Tp = 0.250; %(s) pulse time
+Tp = 0.0250; %(s) pulse time
 N = round(Tp*FS); %# of samples per pulse
 fc = 2590E6; %(Hz) Center frequency (connected VCO Vtune to +5)
 

@@ -41,16 +41,48 @@
 \clearpage
 
 %----------------------------------------------------------------------------------------
-%	SECTION 1. Introduction
+%	SECTION 1. Doppler Radar Processing
 %----------------------------------------------------------------------------------------
 
-\section{Introduction}
+\section{Doppler Radar Processing}
+
+\subsection{Question 1}
+The Doppler shift for each target is measured from the peak location of the discrete-time Fourier transform (DTFT) of the corresponding sampled waveform. Range rate is then determined by the following formula:
+\begin{equation}
+\label{eq:first}
+\frac{f_d}{f_c}*\frac{c}{2}
+\end{equation}
+where $f_d$ is the Doppler shift in Hz and $f_c$ is the center frequency of the radar in Hz. Range rate calculations will obviously be limited since shifts of the peak that are greater than $\pi$ will wrap around, resulting in incorrect calculations. Adjusting the center frequency allows the range of velocities that can be correctly calculated to change. As $f_c$ is decreased, larger speeds can be calculated, but accuracy of these velocities suffers somewhat. Conversely, as $f_c$ increased, accuracy increased, but high velocities could not be detected due to aliasing. \cite{DavenportWaters:2010dsp} Figure \ref{fig:f_c_normal} shows resulting plot with initial center frequency of 2,59 GHz, Figure \ref{fig:f_c_reduced} shows the same plot with reduced center frequency of 259 MHz, whereas Figure \ref{fig:f_c_increased} has resulting plot with increased $f_c$ of 25.9 GHz.
+
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/f_c_normal.png}
+\caption{Doppler determination with 2.59 GHz center frequency.}
+\label{fig:f_c_normal}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/f_c_reduced.png}
+\caption{Doppler determination with 259 MHz center frequency.}
+\label{fig:f_c_reduced}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/f_c_increased.png}
+\caption{Doppler determination with 25.9 GHz center frequency.}
+\label{fig:f_c_increased}
+\end{minipage}
+\end{figure}
+
+\subsection{Question 2}
 
 %----------------------------------------------------------------------------------------
-%	SECTION 2. Discussion
+%	SECTION 2. Range Radar Processing
 %----------------------------------------------------------------------------------------
 
-\section{Discussion}
+\section{Range Radar Processing}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3. CONCLUSION
@@ -79,10 +111,10 @@ R\"ottger J.  (2000).
 \newblock {\em The Instrumental Principles of MST Radars and Incoherent Scatter Radars and The Configuration of Radar System Hardware}.
 \newblock Max Planck Institut F\"ur Aeronomie, Katlenburg-Lindau, Germany.
 
-\bibitem{Wiki:2012pa}
-Wikipedia.org. (2012).
-\newblock {\em Phased array}.
-\newblock {\url{http://en.wikipedia.org/wiki/Phased_array}}.
+\bibitem{DavenportWaters:2010dsp}
+Mark Davenport, Drew Waters (2010).
+\newblock {\em Elec 431 Digital Signal Processing}.
+\newblock {\url{http://www.clear.rice.edu/elec431/projects95/radar/project.html}}.
 
 \end{thebibliography}
 
