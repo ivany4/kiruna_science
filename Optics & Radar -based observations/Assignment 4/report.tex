@@ -77,6 +77,7 @@ where $f_d$ is the Doppler shift in Hz and $f_c$ is the center frequency of the 
 \end{figure}
 
 \subsection{Question 2}
+\label{zpad_doppler}
 
 \begin{figure}[ht]
 \begin{minipage}[b]{0.33\linewidth}
@@ -161,6 +162,23 @@ In Figure \ref{fig:bw_normal} the bandwidth is equal to initial bandwidth of 330
 \end{figure}
 
 \subsection{Question 2}
+
+Zero padding variable $zpad$ plays the same role as discussed in section \ref{zpad_doppler}. Figure \ref{fig:zpad_range_normal} has the RTI plot with initial zero padding of $8*N/2$, while Figure \ref{fig:zpad_range_reduced} shows the RTI plot with reduced $zpad = N$. From these two plots it is seen that plot with reduced zero padding has smoothened horizontal lines in the top and the bottom of the image, whereas in the original plot these lines have repeating curvature.
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/zpad_range_normal.png}
+\caption{RTI with initial $zpad = 8*N/2$.}
+\label{fig:zpad_range_normal}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/zpad_range_reduced.png}
+\caption{RTI with reduced $zpad = N$.}
+\label{fig:zpad_range_reduced}
+\end{minipage}
+\end{figure}
 \subsection{Question 3}
 \subsection{Question 4}
 
