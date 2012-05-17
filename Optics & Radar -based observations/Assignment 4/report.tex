@@ -101,6 +101,32 @@ where $f_d$ is the Doppler shift in Hz and $f_c$ is the center frequency of the 
 
 The Figure \ref{fig:Tp_normal}, Figure \ref{fig:Tp_reduced} and Figure \ref{fig:Tp_increased} show the doppler vs time plots for Tp equal to 0.0025, 0.25 and 10 seconds respectively. It is clearly seen from the Figure \ref{fig:Tp_reduced} that as Tp is reduced the time resolustion and hence the range resolution becomes better but at the cost of doppler resolution. Also from Figure \ref{fig:Tp_increased} it is seen that an increase in Tp gives better doppler resolution but reduces the time i.e. the range resolution of the radar
 
+\subsection{Question 3}
+
+\emph{zpad} is zeropadding. it’s bigger than number of samples (N). the fft function adds zeros when this amount is bigger. The purpose of having zero padding is that having larger number of samples decreases delta t of sampling, which increases frequency resolution and allows to study higher frequencies with the affordable frequency resolution without a threat to run into a aliasing.
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/zpad_normal.png}
+\caption{Doppler determination with $zpad = 8*N/2$.}
+\label{fig:zpad_normal}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/zpad_reduced.png}
+\caption{Doppler determination with $zpad = 2*N/2$.}
+\label{fig:zpad_reduced}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/zpad_increased.png}
+\caption{Doppler determination with $zpad = 80*N/2$.}
+\label{fig:zpad_increased}
+\end{minipage}
+\end{figure}
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION 2. Range Radar Processing
 %----------------------------------------------------------------------------------------
