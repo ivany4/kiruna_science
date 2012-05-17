@@ -103,27 +103,25 @@ The Figure \ref{fig:Tp_normal}, Figure \ref{fig:Tp_reduced} and Figure \ref{fig:
 
 \subsection{Question 3}
 
-\emph{zpad} is zeropadding. it’s bigger than number of samples (N). the fft function adds zeros when this amount is bigger. The purpose of having zero padding is that having larger number of samples decreases delta t of sampling, which increases frequency resolution and allows to study higher frequencies with the affordable frequency resolution without a threat to run into a aliasing.
+$zpad$ is zero padding, which should be bigger than the number of samples $N$. The Fast Fourier Transform (FFT) function adds zeros when this amount is bigger. The purpose of having zero padding is that having larger number of samples decreases $\Delta t$ of sampling, consequently increasing frequency resolution and allowing to study higher frequencies with the affordable frequency resolution without a threat to run into a aliasing. Figure \ref{fig:zpad_normal} shows Doppler determination plot with initial $zpad$ value of 8*N/2. Figure \ref{fig:zpad_reduced} represents the plot with zero padding reduced to the length of N. It is clearly seen that image resolution is worse on this plot. Figure \ref{fig:zpad_increased} contains Doppler determination plot with $zpad = 80*N/2$. It is seen that the actual resolution is similar to that in Figure \ref{fig:zpad_normal}. This means that zero padding has a upper limit after which bigger amount of zeros does not help anymore.
 
-\begin{figure}[ht]
-\begin{minipage}[b]{0.33\linewidth}
+\begin{figure}[h!t]
 \centering
-\includegraphics[width=\textwidth]{Figures/zpad_normal.png}
+\includegraphics[width=0.7\textwidth]{Figures/zpad_normal.png}
 \caption{Doppler determination with $zpad = 8*N/2$.}
 \label{fig:zpad_normal}
-\end{minipage}
-\begin{minipage}[b]{0.33\linewidth}
+\end{figure}
+\begin{figure}[h!t]
 \centering
-\includegraphics[width=\textwidth]{Figures/zpad_reduced.png}
+\includegraphics[width=0.7\textwidth]{Figures/zpad_reduced.png}
 \caption{Doppler determination with $zpad = 2*N/2$.}
 \label{fig:zpad_reduced}
-\end{minipage}
-\begin{minipage}[b]{0.33\linewidth}
+\end{figure}
+\begin{figure}[h!t]
 \centering
-\includegraphics[width=\textwidth]{Figures/zpad_increased.png}
+\includegraphics[width=0.7\textwidth]{Figures/zpad_increased.png}
 \caption{Doppler determination with $zpad = 80*N/2$.}
 \label{fig:zpad_increased}
-\end{minipage}
 \end{figure}
 
 
