@@ -8,7 +8,7 @@
 %
 
 %Process Range vs. Time Intensity (RTI) plot
-% close all;
+close all;
 clear all;
 
 %read the raw data .wave file here
@@ -75,6 +75,8 @@ S2 = v2(:,1:size(v2,2)/2);
 m2 = max(max(S2));
 R = linspace(0,max_range,zpad);
 
+performance = (S2/m2)-(S(2:size(S,1),:)/m);
+
 figure;
 imagesc(R,time,S2-m2,[-80, 0]);
 colorbar;
@@ -82,3 +84,10 @@ ylabel('time (s)');
 xlabel('range (m)');
 title('RTI with 2-pulse canceller clutter rejection');
 
+figure;
+imagesc(R,time,performance, [-0.5, 2.5]);
+% plot(time, performance);
+colorbar;
+ylabel('Performance improvment [dB]');
+xlabel('range (m)');
+title('Performance improvement for clutter rejection');

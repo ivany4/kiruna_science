@@ -179,7 +179,45 @@ Zero padding variable $zpad$ plays the same role as discussed in section \ref{zp
 \label{fig:zpad_range_reduced}
 \end{minipage}
 \end{figure}
+
+
 \subsection{Question 3}
+Two plots of RTI without and with clutter rejection are shown in Figures \ref{fig:no_rejection} and \ref{fig:rejection} respectively.
+The performance improvement for clutter rejection was plotted using the following code:
+\begin{lstlisting}
+performance = (S2/m2)-(S(2:size(S,1),:)/m);
+figure;
+imagesc(R,time,performance, [-0.5, 2.5]);
+colorbar;
+ylabel('Performance improvment [dB]');
+xlabel('range (m)');
+title('Performance improvement for clutter rejection');
+\end{lstlisting}
+
+The color scale was reduced to the range of (-0.5, 2.5) to make the variations more clear. It is seen from the Figure \ref{fig:improvement} that in the areas which remain bright, espessialy the curves, on both plots there's no improvement (blueish color). This also applies for horizontal lines in the top and the bottom of the plots. The biggest improvement is on the left side of the plot and it is seen from the most yellowish color in the improvement figure. The right side of the plot is less bright saying that there's no much improvement made.
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/no_rejection.png}
+\caption{RTI without clutter rejection.}
+\label{fig:no_rejection}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/rejection.png}
+\caption{RTI with 2-pulse canceller clutter rejection.}
+\label{fig:rejection}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/improvement.png}
+\caption{Performance improvement for clutter rejection [dB].}
+\label{fig:improvement}
+\end{minipage}
+\end{figure}
+
+
 \subsection{Question 4}
 
 %----------------------------------------------------------------------------------------
