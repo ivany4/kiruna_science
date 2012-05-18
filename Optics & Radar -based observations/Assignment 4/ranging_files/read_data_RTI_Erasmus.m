@@ -75,7 +75,17 @@ S2 = v2(:,1:size(v2,2)/2);
 m2 = max(max(S2));
 R = linspace(0,max_range,zpad);
 
+
+%2 pulse canceller RTI plot with third pulse subtracted from first
+sif2 = sif(3:size(sif,1),:)-sif(1:size(sif,1)-2,:);
+v2 = dbv(ifft(sif2,zpad,2));
+S2 = v2(:,1:size(v2,2)/2);
+m2 = max(max(S2));
+R = linspace(0,max_range,zpad);
+
 performance = (S2/m2)-(S(2:size(S,1),:)/m);
+
+performance31 = (S2/m2)-(S(3:size(S,1),:)/m);
 
 figure;
 imagesc(R,time,S2-m2,[-80, 0]);
