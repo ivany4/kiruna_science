@@ -240,7 +240,7 @@ xlabel('range (m)');
 title('Performance improvement for clutter rejection');
 \end{lstlisting}
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 \begin{minipage}[b]{0.33\linewidth}
 \centering
 \includegraphics[width=\textwidth]{Figures/no_rejection_31.png}
@@ -262,6 +262,90 @@ title('Performance improvement for clutter rejection');
 \end{figure}
 
 \subsubsection{b)}
+
+\begin{figure}[htb]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/mean_rejection.png}
+\caption{RTI with mean clutter rejection for 9 pulses.}
+\label{fig:mean_rejection}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/mean_improvment.png}
+\caption{Performance improvement for mean clutter rejection [dB].}
+\label{fig:mean_improvment}
+\end{minipage}
+\end{figure}
+
+The RTI plot with clutter rejection are shown in Figure \ref{fig:mean_rejection} and the improvement plot is shown in Figure \ref{fig:mean_improvment}. The plot without the clutter rejection remains the same as shown in Figure \ref{fig:no_rejection_31}. For clutter rejection for each pulse the matrix with pulses adjacent to current one is taken for the mean value calculation. It means that the mean value for each pixel is taken from the pixel itself plus eight adjacent pixels. The clutter rejection was made using the following code:
+
+\begin{lstlisting}
+%2 median of N pulses
+for i=1:size(sif,1)
+    for j=1:size(sif,2)
+        sif2(i,j) = sif(i,j)-mean(mean(sif(max([1,i-1]):min([i+1,size(sif,1)]), max([1,j-1]):min([j+1,size(sif,2)]))));
+    end
+end
+\end{lstlisting}
+
+
+\subsubsection{c)}
+
+The RTI plot with clutter rejection are shown in Figure \ref{fig:median_rejection} and the improvement plot is shown in Figure \ref{fig:median_improvment}. The plot without the clutter rejection remains the same as shown in Figure \ref{fig:no_rejection_31}. For clutter rejection for each pulse the matrix with pulses adjacent to current one is taken for the median value calculation. It means that the median value for each pixel is taken from the pixel itself plus eight adjacent pixels. The clutter rejection was made using the following code:
+
+\begin{lstlisting}
+%2 median of N pulses
+for i=1:size(sif,1)
+    for j=1:size(sif,2)
+        sif2(i,j) = sif(i,j)-median(median(sif(max([1,i-1]):min([i+1,size(sif,1)]), max([1,j-1]):min([j+1,size(sif,2)]))));
+    end
+end
+\end{lstlisting}
+
+
+\begin{figure}[htb]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/median_rejection.png}
+\caption{RTI with median clutter rejection for 9 pulses.}
+\label{fig:median_rejection}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/median_improvment.png}
+\caption{Performance improvement for median clutter rejection [dB].}
+\label{fig:median_improvment}
+\end{minipage}
+\end{figure}
+
+\subsubsection{d)}
+
+\begin{figure}[hbt]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/custom_rejection.png}
+\caption{RTI with mean clutter rejection for 21 pulse from the same column.}
+\label{fig:custom_rejection}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/custom_improvment.png}
+\caption{Performance improvement for median clutter rejection [dB].}
+\label{fig:custom_improvment}
+\end{minipage}
+\end{figure}
+
+The RTI plot with clutter rejection are shown in Figure \ref{fig:custom_rejection} and the improvement plot is shown in Figure \ref{fig:custom_improvment}. The plot without the clutter rejection remains the same as shown in Figure \ref{fig:no_rejection_31}. For clutter rejection for each pulse the array with pulses adjacent to current one is taken for the mean value calculation. It means that the mean value for each pixel is taken from the pixel itself plus ten pixels from the left and ten pixels from the right. This is similar to the mean clutter rejection with only one difference that mean value is taken for the rows in one dimension instead of two. The clutter rejection was made using the following code:
+
+\begin{lstlisting}
+%2 custom clutter rejection
+for i=1:size(sif,1)
+    for j=1:size(sif,2)
+        sif2(i,j) = sif(i,j)-mean(sif(max([1,i-10]):min([i+10,size(sif,1)]), j));
+    end
+end
+\end{lstlisting}
 
 
 %----------------------------------------------------------------------------------------

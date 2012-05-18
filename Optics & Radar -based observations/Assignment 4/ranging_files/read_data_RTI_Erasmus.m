@@ -69,23 +69,66 @@ xlabel('range (m)');
 title('RTI without clutter rejection');
 
 %2 pulse canceller RTI plot
-sif2 = sif(2:size(sif,1),:)-sif(1:size(sif,1)-1,:);
-v2 = dbv(ifft(sif2,zpad,2));
-S2 = v2(:,1:size(v2,2)/2);
-m2 = max(max(S2));
-R = linspace(0,max_range,zpad);
+% sif2 = sif(2:size(sif,1),:)-sif(1:size(sif,1)-1,:);
+% v2 = dbv(ifft(sif2,zpad,2));
+% S2 = v2(:,1:size(v2,2)/2);
+% m2 = max(max(S2));
+% R = linspace(0,max_range,zpad);
 
 
 %2 pulse canceller RTI plot with third pulse subtracted from first
-sif2 = sif(3:size(sif,1),:)-sif(1:size(sif,1)-2,:);
+% sif2 = sif(3:size(sif,1),:)-sif(1:size(sif,1)-2,:);
+% v2 = dbv(ifft(sif2,zpad,2));
+% S2 = v2(:,1:size(v2,2)/2);
+% m2 = max(max(S2));
+% R = linspace(0,max_range,zpad);
+
+% %2 mean of N pulses
+% for i=1:size(sif,1)
+%     for j=1:size(sif,2)
+%         sif2(i,j) = sif(i,j)-mean(mean(sif(max([1,i-1]):min([i+1,size(sif,1)]), max([1,j-1]):min([j+1,size(sif,2)]))));
+%     end
+% end
+% 
+% %2 median of N pulses
+% for i=1:size(sif,1)
+%     for j=1:size(sif,2)
+%         sif2(i,j) = sif(i,j)-median(median(sif(max([1,i-1]):min([i+1,size(sif,1)]), max([1,j-1]):min([j+1,size(sif,2)]))));
+%     end
+% end
+
+
+%2 custom clutter rejection
+for i=1:size(sif,1)
+    for j=1:size(sif,2)
+        sif2(i,j) = sif(i,j)-mean(sif(max([1,i-10]):min([i+10,size(sif,1)]), j));
+    end
+end
+
+% for i=1:size(mean_m,1)
+%     for j=1:size(mean_m,2)
+%         sif2(i,j) = sqrt(mean_m(i,j));
+%     end
+% end
+% sif2 = sqrtm(mean_m);
+% sif2 = mean_m;
+
+
+% sif2 = sif*sif'; %square it
+% mean_val = mean(mean(sif2));
+% sif2_tmp = sif2 - mean_val;
+% sif2 = sqrtm(sif2_tmp);
+
 v2 = dbv(ifft(sif2,zpad,2));
 S2 = v2(:,1:size(v2,2)/2);
 m2 = max(max(S2));
 R = linspace(0,max_range,zpad);
 
-performance = (S2/m2)-(S(2:size(S,1),:)/m);
+% performance = (S2/m2)-(S(2:size(S,1),:)/m);
 
-performance31 = (S2/m2)-(S(3:size(S,1),:)/m);
+% performance31 = (S2/m2)-(S(2:size(S,1),:)/m);
+
+performance = (S2/m2)-(S/m);
 
 figure;
 imagesc(R,time,S2-m2,[-80, 0]);
@@ -96,8 +139,9 @@ title('RTI with 2-pulse canceller clutter rejection');
 
 figure;
 imagesc(R,time,performance, [-0.5, 2.5]);
-% plot(time, performance);
 colorbar;
 ylabel('Performance improvment [dB]');
 xlabel('range (m)');
 title('Performance improvement for clutter rejection');
+
+system('say "MATLAB is ready"');
