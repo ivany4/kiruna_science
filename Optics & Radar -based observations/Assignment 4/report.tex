@@ -219,7 +219,7 @@ The color scale was reduced to the range of (-0.5, 2.5) to make the variations m
 
 
 \subsection{Question 4}
-\subsubsection{a}
+\subsubsection{a)}
 
 Two plots of RTI without and with clutter rejection are shown in Figures \ref{fig:no_rejection_31} and \ref{fig:rejection_31} respectively. For clutter rejection the third pulse has been subtracted from the first one. The performance improvement by the above method of two pulse subtraction is shown in Figure \ref{fig:improvement_31}
 The performance improvement for clutter rejection was plotted using the following code:
@@ -234,7 +234,6 @@ performance = (S2/m2)-(S(3:size(S,1),:)/m);
 
 figure;
 imagesc(R,time,performance, [-0.5, 2.5]);
-% plot(time, performance);
 colorbar;
 ylabel('Performance improvment [dB]');
 xlabel('range (m)');
@@ -261,6 +260,9 @@ title('Performance improvement for clutter rejection');
 \label{fig:improvement_31}
 \end{minipage}
 \end{figure}
+
+\subsubsection{b)}
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3. REFERENCES
