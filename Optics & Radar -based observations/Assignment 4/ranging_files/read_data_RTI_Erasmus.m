@@ -101,3 +101,14 @@ colorbar;
 ylabel('Performance improvment [dB]');
 xlabel('range (m)');
 title('Performance improvement for clutter rejection');
+
+
+figure;
+imagesc(R,time,performance31, [-0.5, 2.5]);
+% plot(time, performance);
+colorbar;
+ylabel('Performance improvment [dB]');
+xlabel('range (m)');
+title('Performance improvement for clutter rejection');
+
+
