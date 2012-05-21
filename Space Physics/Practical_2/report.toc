@@ -1,7 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Classification}{3}
-\contentsline {section}{\numberline {3}Auroral Forecast}{3}
-\contentsline {subsection}{\numberline {3.1}Magnetometer}{4}
-\contentsline {subsection}{\numberline {3.2}Riometer}{4}
-\contentsline {subsection}{\numberline {3.3}Analysis}{6}
-\contentsline {section}{\numberline {4}Conclusions}{6}
