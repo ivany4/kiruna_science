@@ -74,10 +74,17 @@ In pulsed radar and sonar signal processing, an ambiguity function is a two-dime
 
 \subsection{Autocorrelation Functions}
 Autocorrelation is the cross-correlation of a signal with itself. Informally, it is the similarity between observations as a function of the time separation between them. It is a mathematical tool for finding repeating patterns, such as the presence of a periodic signal which has been buried under noise, or identifying the missing fundamental frequency in a signal implied by its harmonic frequencies. It is often used in signal processing for analysing functions or series of values, such as time domain signals. \cite{Wiki:2012auto}
+\\
+\\
+In order to have high range resolutions, the use of short pulses is important in radar applications. However there are several limitations to the use of short pulses. The bandwidth of a short pulse is large because the bandwidth is inversely proportional to the pulse width. A large bandwidth of the signal makes the radar system complex, places greater demand on the signal processing and increases the chances of interference with other electromagnetic signals. A large bandwidth also reduces the dynamic range of the receiver because the noise power is proportional to the bandwidth. Also the short pulses don't have high resolution in the doppler frequency measurement. Short pulses also places more demands on transmitter peak power. \cite{Skolnik:2001irs}\\
+\\
+Pulse compression is a technique which allows the radar to simultaneously achieve the energy of a long pulse and the resolution of a short pulse by avoiding the use of high peak power which is needed in high energy short duration pulse. In this method a long pulse is made to have the same bandwidth as a short pulse by modulation it in frequency or phase. \cite{Skolnik:2001irs}\\
+\\
 
 \subsection{Analysis of the properties of different signals}
 
-
+Figure \ref{fig:long_pulse_data} and Figure \ref{fig:long_pulse_3d} show the autocorrelation and ambiguity function of a long pulse. For a square pulse response is centered around origin. There is no response outside the the width $\tau$, which is observed both in the autocorrelation and ambiguity function plots. The time delay measurement error is proportinal to the pulse width and the frequency measurement error is proportional to the inverse of the pulse width. Thus the frequency measurement accuracy for a long pulse would be good while the time delay measurement accuracy would be worse. Hence the doppler tolerance for a long pulse is better at the cost of range resolution which is poor. \cite{Skolnik:2001irs}\\
+\\
 \begin{figure}[h]
 \begin{minipage}[t]{0.5\linewidth}
 \centering
@@ -127,13 +134,13 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/barker_data.png}
-\caption{Autocorrelation function of Barker coding (13).}
+\caption{Autocorrelation function of Barker coding}
 \label{fig:barker_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/barker_3d.png}
-\caption{Ambiguity function of Barker coding (13).}
+\caption{Ambiguity function of Barker coding}
 \label{fig:barker_3d}
 \end{minipage}
 \end{figure}
@@ -142,30 +149,31 @@ Autocorrelation is the cross-correlation of a signal with itself. Informally, it
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/complementary_data.png}
-\caption{Autocorrelation function of complementary coding (7).}
+\caption{Autocorrelation function of complementary coding}
 \label{fig:complementary_data}
 \end{minipage}
 \begin{minipage}[t]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/complementary_3d.png}
-\caption{Ambiguity function of complementary coding (7).}
+\caption{Ambiguity function of complementary coding}
 \label{fig:complementary_3d}
 \end{minipage}
 \end{figure}
+Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d} show the autocorrelation and ambiguity function of a short pulse. As it can be seen in Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d}, the response is centered around origin. There is no response outside the the pulse width $\tau$. Thus the doppler frequency measurement accuracy for a long pulse would be worse while the time delay measurement accuracy would be good. This implies a bad doppler tolerance and a good range resolution.\cite{Skolnik:2001irs}\\
+\\
+Thus it can be said if a good range resolution is required then a short pulse should be used and if a good doppler frequency resolution is required a long pulse should be used as it is more doppler tolerant.\\
 
-In order to have high range resolutions, the use of short pulses is important in radar applications. However there are several limitations to the use of short pulses. The bandwidth of a short pulse is large because the bandwidth is inversely proportional to the pulse width. A large bandwidth of the signal makes the radar system complex, places greater demand on the signal processing and increases the chances of interference with other electromagnetic signals. A large bandwidth also reduces the dynamic range of the receiver because the noise power is proportional to the bandwidth. Also the short pulses don't have high resolution in the doppler frequency measurement. Short pulses also places more demands on transmitter peak power. \cite{Skolnik:2001irs}\\
+Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the autocorrelation and ambiguity function of the LFM signal. In such a signal the time delay measurement accuracy is proportional to the inverse of the bandwidth and the frequency measurement accuracy is proportional to inverse of the pulse width.  The pulse width and the bandwidth are independant of each other and hence the time delay and frequency measurement accuracy are also independent of each other. Thus a good range resolution can be obtained with a LFM pulse without a loss in the doppler tolerance as both can be independantly choses as required.\\
 \\
-Pulse compression is a technique which allows the radar to simultaneously achieve the energy of a long pulse and the resolution of a short pulse by avoiding the use of high peak power which is needed in high energy short duration pulse. In this method a long pulse is made to have the same bandwidth as a short pulse by modulation it in frequency or phase. \cite{Skolnik:2001irs}\\
-\\
-Figure \ref{fig:long_pulse_data} and Figure \ref{fig:long_pulse_3d} show the autocorrelation and ambiguity function of a long pulse. For a square pulse response is centered around origin. There is no response outside the the width $\tau$, which is observed both in the autocorrelation and ambiguity function plots. The time delay measurement error is proportinal to the pulse width and the frequency measurement error is proportional to the inverse of the pulse width. Thus the frequency measurement accuracy for a long pulse would be good while the time delay measurement accuracy would be worse. \cite{Skolnik:2001irs}\\
-\\
-Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d} show the autocorrelation and ambiguity function of a short pulse. As it can be seen in Figure \ref{fig:short_pulse_data} and Figure \ref{fig:short_pulse_3d}, the response is centered around origin. There is no response outside the the pulse width $\tau$. Thus the frequency measurement accuracy for a long pulse would be worse while the time delay measurement accuracy would be good. \cite{Skolnik:2001irs}\\
-\\
-Figure \ref{fig:lfm_data} and Figure \ref{fig:lfm_3d} show the autocorrelation and ambiguity function of the LFM signal. In such a signal the time delay measurement accuracy is proportional to the inverse of the bandwidth and the frequency measurement accuracy is proportional to inverse of the pulse width.  The pulse width and the bandwidth are independant of each other and hence the time delay and frequency measurement accuracy are also independent of each other.\\
-\\
-The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the autocorrelation and the ambiguity function plots of a long pulse compressed by barker coding. One of the ways of increasing the bandwidth of a long pulse for the purpose of pulse compression, is by changing the phase. A long pulse of duration T is divided in to N subpulses of width $\tau$. The bandwidth is increased by changing the phase of each subpulse. A common form of phase change is \textit{binary phase coding}, in which the phases are made either 0 or $\pi$ according to a specified criterion. If the 0 and $\pi$ phase selection are made at random then the time side lobes have higher magnitude. Barker codes are a set sequences of 0 and $\pi$ phases for the subpulses so that the side lobes have lower peak values. If the barker codes are used for the phases of the subpulses then all the time side lobes have equal magnitude. \cite{Skolnik:2001irs}. This is clearly observed in the Figures \ref{fig:barker_data} and \ref{fig:barker_3d}.\\
-\\
-The autocorrelation and the ambiguity function plot of a long pulse compressed with complementary coding is shown in Figure \ref{fig:complementary_data} and Figure \ref{fig:complementary_3d} respectively. Using the complementary codes for the phase selections is another method of achieving pulse compression. In this coding method, pairs of equal length phase-coded pulses are chosen so that the side lobes of the autocorrelation function of one are the negative of the other. In complemenatary coding  the autocorrelation function from the outputs of the two matched filters are added. This results in the algebraic sum of the side lobes being zero and the main response being 2N where N is the number of subpulses.
+One of the ways of increasing the bandwidth of a long pulse for the purpose of pulse compression, is by changing the phase. A long pulse of duration T is divided in to N subpulses of width $\tau$. The bandwidth is increased by changing the phase of each subpulse. A common form of phase change is \textit{binary phase coding}, in which the phases are made either 0 or $\pi$ according to a specified criterion. If the 0 and $\pi$ phase selection are made at random then the time side lobes have higher magnitude. But some sequences of phases change make the magnitude of side lobes smaller. Two good sequences of side lobe suppression are 
+\begin{itemize}
+\item Barker Coding
+\item Complementary Coding
+\end{itemize} 
+
+Barker codes are a set sequences of 0 and $\pi$ phases for the subpulses so that the side lobes have lower peak values. If the barker codes are used for the phases of the subpulses then all the time side lobes have equal magnitude.\cite{Skolnik:2001irs}. The Figure \ref{fig:barker_data} and Figure \ref{fig:barker_3d} show the autocorrelation and the ambiguity function plots of a long pulse compressed by barker coding. It can be inferred that the doppler frequency tolerance would be good because of lower side lobes in the ambiguity diagram. Also the main lobe is centered around the origin because the long pulse has been compressed by Barker Coding and hence a good range resolution would also be obtained.\\
+
+The autocorrelation and the ambiguity function plot of a long pulse compressed with complementary coding is shown in Figure \ref{fig:complementary_data} and Figure \ref{fig:complementary_3d} respectively. Using the complementary codes for the phase selections is another method of achieving pulse compression. In this coding method, pairs of equal length phase-coded pulses are chosen so that the side lobes of the autocorrelation function of one are the negative of the other. In complemenatary coding  the autocorrelation function from the outputs of the two matched filters are added. This results in the algebraic sum of the side lobes being zero and the main response being 2N where N is the number of subpulses. Thus because of side lobe being null in this type of pulse compression the doppler tolerance is good and also as the main lobe being centered around origin it yields good range resolution.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3. Part 2
