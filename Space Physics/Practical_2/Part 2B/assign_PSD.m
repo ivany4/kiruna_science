@@ -30,13 +30,16 @@ b_wave = [time, b1_wave, b2_wave, b3_wave];
  ylabel('log[PSD]');
  
  
- [psdB,psddevB,psdBx,psdBxdev,psdBy,psdBydev,psdBz,psdBzdev,Bfreqs]= PSDvsFREQ(b1_wave,b2_wave,b3_wave,454.5,1,1,512,256,256,512);
+ [psdB1,psddevB,psdBx,psdBxdev,psdBy,psdBydev,psdBz,psdBzdev,Bfreqs]= PSDvsFREQ(b1_wave,b2_wave,b3_wave,454.5,1,1,512,256,256,512);
  
  figure;
- plot(Bfreqs,log(psdB),'b');
+ plot(Bfreqs,log(psdB1),'b');
+%  hold;
+%  errorbar(Bfreqs,log(psdB1),log(psdB1)-log(psdB));
  title('Electric Field Logarithimic PSD plot');
  xlabel('Frequency Distribution [hz]');
  ylabel('log[PSD]');
+
  
  %Transforming to Magenetic Field in OB System 
 B4OB=OBsystem(b_wave ,b_FGM); 
@@ -78,6 +81,4 @@ bz=B4OB(:,4).';
  title('Magnetic Field Logarithimic PSD plot');
  xlabel('Frequency Distribution [hz]');
  ylabel('log[PSD]');
- 
- 
- 
+
