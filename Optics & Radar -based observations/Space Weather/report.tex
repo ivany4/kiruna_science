@@ -153,7 +153,7 @@ In the next step, the International Reference Ionosphere (IRI) model was retriev
 The real measurements from ESR were got by running "GUIDSDAP" script, which created a bunch of *.mat files. All these files had number densities for the same height which were slightly different. Although altitude data also was not the same among the files, the difference was just tens of meters. It was decided to average measurements by taking mean values of altitudes as well as number densities. In the end, the vertical profile of averaged electron number density $N_e$ was plotted, as shown in Figure \ref{fig:density}.\\
 Comparing two electron number density signatures yields to the conclusion that, even though the shapes of the densities are similar, they have quite a big difference. It is seen that maximum electron number density in IRI model occurs at approximately 300 km altitude, whereas in EISCAT measurements it is just slightly less than 250 km. Moreover, EISCAT maximum electron number density is $3.936*10^{11}\:m^{-3}$, while IRI model show around $5.35*10^{11}\:m^{-3}$. Such a behavior makes it clear that ESR data is not calibrated.\\
 \\
-One more way to ensure that the data needs to be calibrated is to compare electron number density with the one from another source, for instance, dynasonde. Dynasonde is an ionosonde competent to measure the dynamics of the ionosphere. \cite{Ngdc:2004d} An ionosonde is a special radar for the examination of the ionosphere. The transmitter sweeps all or part of the HF frequency range, transmitting short pulses. These pulses are reflected at various layers of the ionosphere, at heights of 100-400 km, and their echos are received by the receiver and analyzed by the control system. The result is displayed in the form of an ionogram, a graph of reflection height (actually time between transmission and reception of pulse) versus carrier frequency. \cite{Wiki:2012i} EISCAT runs its own dynasonde, which among all other values provided has $f_0F2$ coefficient. $f_0F2$ is related to electron number density $N_e$ as described in Equation \ref{eq:f0f2}
+One more way to ensure that the data needs to be calibrated is to compare electron number density with the one from another source, for instance, dynasonde. Dynasonde is an ionosonde competent to measure the dynamics of the ionosphere. \cite{Ngdc:2004d} An ionosonde is a special radar for the examination of the ionosphere. The transmitter sweeps all or part of the HF frequency range, transmitting short pulses. These pulses are reflected at various layers of the ionosphere, at heights of 100-400 km, and their echos are received by the receiver and analyzed by the control system. The result is displayed in the form of an ionogram, a graph of reflection height (actually time between transmission and reception of pulse) versus carrier frequency. \cite{Wiki:2012i} EISCAT runs its own dynasonde, which among all other values provided has $f_0F2$ frequency. It is well established that the ionospheric electron density of the F2-layer and thus the physical frequency $f_0F2$ depend strongly on solar activity. \cite{XenosKourisZolesi:1996} $f_0F2$ is related to electron number density $N_e$ as described in Equation \ref{eq:f0f2}
 \begin{equation}
 \label{eq:f0f2}
 f_0F2=\frac{\sqrt{\frac{N_e\,e^2}{\epsilon_0\,m_e}}}{2\pi}
@@ -179,7 +179,7 @@ Given the values, Magic constant was calculated and added to "GUISDAP" Matlab sc
 		\label{fig:density_cal_no_spikes}
 	\end{minipage}
 \end{figure}
-This graph contains very long spike at altitude of 500 km which is not common. One possible explanation is that during the experiment an object with high reflective properties entered the field view of the radar. Actually, EISCAT assistant mentioned once that there was a spacecraft crossing studied area during the experiments. However, uncalibrated data did not contain such an enormous anomaly in measurements. Thus, the reason is still remaining uncertain. To continue data interpretation, condition was inserted to eliminate such spikes. Basically, if it detects variations larger than factor of 10, it takes a mean value of two adjacent density values. The vertical profile of calibrated electron densities with spikes removed is shown in Figure \ref{fig:density_cal_no_spikes}. The maximum number density with this data is $5.590073*10^{11}\:m^{-3}$, which is different from the maximum density calculated using $f_0F2$ coefficient only by 0.8\%. The calibrated and refined density profile also was compared with IRI model profile as shown in Figure \ref{fig:iri_eiscat}. This time data match is much more accurate. It proves that calibration using Magic constant is accurate enough and the calibrated data is reliable. However, profiles are still not perfectly similar. This can happen because of several reasons, for example, snow lying on the radar dish. The small downward shift could be caused by an active electric field present in the ionosphere. \cite{Stoffregen:1969ed} Also for the altitudes below 300 km there is bigger downward shift which might be caused by reflection because of the presence of a wave in the solar wind, however this is not likely, because investigation of the space weather showed that there were no strong solar flares during the relevant time period.
+This graph contains very long spike at altitude of 500 km which is not common. One possible explanation is that during the experiment an object with high reflective properties entered the field view of the radar. Actually, EISCAT assistant mentioned once that there was a spacecraft crossing studied area during the experiments. However, uncalibrated data did not contain such an enormous anomaly in measurements. Thus, the reason is still remaining uncertain. To continue data interpretation, condition was inserted to eliminate such spikes. Basically, if it detects variations larger than factor of 10, it takes a mean value of two adjacent density values. The vertical profile of calibrated electron densities with spikes removed is shown in Figure \ref{fig:density_cal_no_spikes}. The maximum number density with this data is $5.590073*10^{11}\:m^{-3}$, which is different from the maximum density calculated using $f_0F2$ frequency only by 0.8\%. The calibrated and refined density profile also was compared with IRI model profile as shown in Figure \ref{fig:iri_eiscat}. This time data match is much more accurate. It proves that calibration using Magic constant is accurate enough and the calibrated data is reliable. However, profiles are still not perfectly similar. This can happen because of several reasons, for example, snow lying on the radar dish. The small downward shift could be caused by an active electric field present in the ionosphere. \cite{Stoffregen:1969ed} Also for the altitudes below 300 km there is bigger downward shift which might be caused by reflection because of the presence of a wave in the solar wind, however this is not likely, because investigation of the space weather showed that there were no strong solar flares during the relevant time period.
 \begin{figure}[h!tb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Figures/iri_eiscat.png}
@@ -187,12 +187,42 @@ This graph contains very long spike at altitude of 500 km which is not common. O
 	\label{fig:iri_eiscat}
 \end{figure}
 
+In the following step, $f_0F2$ index from EISCAT dynasonde was compared to one from Sodankyl\"a ionosonde. The EISCAT index varies between 5.8 and 6.74 with 5.89 at exactly 12:00 UT. Data from Sodankyl\"a ionosonde is shown in Figure \ref{fig:sodankyla}. From this figure it is seen that at 12:00 UT $f_0F2$ frequency was around 6.3 MHz. It is similar to one, measured by EISCAT, however not the same. Difference can be due to the different geographical location and a different environment around it.
+
+\begin{figure}[h!tb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/sodankyla.png}
+	\caption{Critical frequencies measured by Sodankyl\"a ionosonde.}
+	\label{fig:sodankyla}
+\end{figure}
+
+Unfortunately it was impossible to get data from Tomsk dynosonde because it has been down since September, 2011.\\
+\\
+The final step was to plot vertical profiles of ion temperature and ratio between and electron temperature from EISCAT radar data. The temperature and ratio are shown in Figures \ref{fig:ion_t} and \ref{fig:ratio} respectively.
+\begin{figure}[h!tb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/ion_t.png}
+	\caption{Ion temperature from EISCAT radar data.}
+	\label{fig:ion_t}
+\end{figure}
+\begin{figure}[h!tb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/ratio.png}
+	\caption{Ratio between electron and ion temperature.}
+	\label{fig:ratio}
+\end{figure}
+
+It is seen that ion temperature increases together with the height. However, there is one spike at the altitude of approximately 90 km, which might be just a false data. Sun is at the moment in the middle of its solar cycle, which can be proved by the sunspots number. According to the Space Weather Prediction Center last solar minimum happened in 2009 and next solar maximum is expected in 2013-2014. Also, solar wind density and temperature are moderate at the moment. Thus, ion temperatures are not particulary high, as can be seen in Figure \ref{fig:ion_t}.\\
+\\
+The electron temperature is, in general, very similar to the ion temperature below ∼90 km. \cite{Kohnlein:1985mei} On the graph, measurements begin at approximately 100 km with ratio $\approx$1. In general, ration between temperatures corresponds to current space weather, which is described in the beginning of this section. It is not very small, neither it is high as it would be during high solar activity.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4. Conclusion
 %----------------------------------------------------------------------------------------
 
 \section{Conclusion}
+
+This practical provided us with opportunity to operate a real radar and extract the real data for processing later. However, it became obvious that most of the effort should be put in understanding and correctly interpreting retrieved data. We learned, that any processed data must be compared to other sources in order to determine if it is reliable or not. In case when large variations occur, it is necessary to calibrate the radar. The way EISCAT does it is by introducing the \emph{Magic constant} which is a scale factor for the radar constant. Finally we compared calibrated data to idealized IRI model and also to current space weather conditions, retrieved from various Internet resources. The comparison showed that the final data is relevant to what was happening when the experiment took place.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 5. REFERENCES
@@ -226,20 +256,19 @@ National Geophysical Data Center (NGDC) (2004).
 \newblock {\url{http://www.ngdc.noaa.gov/stp/IONO/Dynasonde/whatis.htm#Dynasonde}}.
 
 \bibitem{Stoffregen:1969ed}
-W. Stoffregen (1969).
+Stoffregen W. (1969).
 \newblock {\em Electron density variation observed in the E-layer below an artificial barium cloud}.
 \newblock {Uppsala Ionospheric Observatory, Research Institute of Swedish National Defence, Uppsala, Sweden}.
 
-\bibitem{Skolnik:2001irs}
-Skolnik M. ~I.  (2001).
-\newblock {\em Introduction to Radar Systems}.
-\newblock The McGraw-Hill Companies, Inc., New York, United States.
+\bibitem{Kohnlein:1985mei}
+Köhnlein W. (1985).
+\newblock {\em A model of the electron and iontemperatures in the ionosphere}.
+\newblock {Astronomical Institutes, University of Bonn, Bonn, Germany}.
 
-\bibitem{Rottger:2000ip}
-R\"ottger J.  (2000).
-\newblock {\em The Instrumental Principles of MST Radars and Incoherent Scatter Radars and The Configuration of Radar System Hardware}.
-\newblock Max Planck Institut F\"ur Aeronomie, Katlenburg-Lindau, Germany.
-
+\bibitem{XenosKourisZolesi:1996}
+Xenos T., Kouris S. and Zolesi B. (1996).
+\newblock {\em Assesment of the solar-cycle dependence of $f_0F2$}.
+\newblock {Department of Electrical Engineering, University of Thessaloniki, Greece}.
 
 \end{thebibliography}
 
