@@ -38,17 +38,17 @@ ylabel('Time')
 energy1069 = data_1069(75:400,:);
 energy1070 = data_1070(25:300,:);
 
-energyCounts_1069 = (sum(energy1069));
-energyCounts_1070 = (sum(energy1070));
+Counts_1069 = (sum(energy1069));
+Counts_1070 = (sum(energy1070));
 
 figure
-plot(energy_levels,energyCounts_1069,'r');
+plot(energy_levels,Counts_1069,'r');
 title('Energy Spectrum for 1069 orbit');
 ylabel('Counts')
 xlabel('Energy levels')
 
 figure
-plot(energy_levels,energyCounts_1070,'r');
+plot(energy_levels,Counts_1070,'r');
 title('Energy Spectrum for 1070 orbit');
 ylabel('Counts')
 xlabel('Energy level')
@@ -62,13 +62,13 @@ energy_levels_Joule = energy_levels*e;
 velocity_levels = sqrt((2*energy_levels_Joule)/mp);
 
 figure
-plot(velocity_levels, energyCounts_1069,'r--');
+plot(velocity_levels,Counts_1069,'r--');
 title('Velocity Spectrum for 1069 orbit');
 ylabel('Counts')
 xlabel('Velocity [m/s]')
 
 figure
-plot(velocity_levels, energyCounts_1070,'r--');
+plot(velocity_levels,Counts_1070,'r--');
 title('Velocity Spectrum for 1070 orbit');
 ylabel('Counts')
 xlabel('Velocity [m/s]')
