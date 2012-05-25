@@ -19,6 +19,8 @@
 \usepackage{graphicx}
 \usepackage{fullpage}
 \usepackage{url}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 
@@ -54,7 +56,7 @@ The purpose of this laboratory experiment is to get acquainted with the EISCAT S
 \section{Experiment}
 
 The ESR is controlled by the EISCAT Realtime Operating System (EROS). This particular experiment comes with a codename "Beata".\\
-The experiment took place at space campus near Kiruna, Sweden between 11:45 UTC and 12:15 UTC.
+The experiment took place at space campus near Kiruna, Sweden between 11:45 UT and 12:15 UT.
 List of used commands during the experiment:
 \begin{itemize}
 \item \textbf{runexperiment /kst/exp/exp1 time now exp1}: (the full path must be given) at time time, which can be given at as \emph{HH:MM:SS} or \emph{now} or \emph{fullminute} etc.
@@ -69,6 +71,75 @@ During the experiment data has been observed in real time with help of the real 
 %----------------------------------------------------------------------------------------
 
 \section{Data analysis and discussion}
+
+After the experiment was performed the information about space weather was retrieved from the different sources. It was necessary to collect the relevant information from other sources to ensure that the experiment didn't go wrong and the data acquired is meaningful. For this reason Internet resources were used, including:
+\begin{itemize}
+\item \url{http://sohowww.nascom.nasa.gov/}
+\item \url{http://www.swpc.noaa.gov/ace}
+\item \url{http://www.spaceweather.com/}
+\item \url{http://www.spacew.com/}
+\end{itemize}
+Later the data was combined to form the single impression of current space weather, including various solar wind parameters, sunspot number, magnetic field and plasma parameters.\\
+\\
+\textbf{Space weather for 2015-05-15 12:31 UT}:\\
+\begin{tabular}{ l l }
+Solar Wind speed:              & 396.2 $km/s$         \\
+Solar Wind temperature:        & 42421.5 $K$          \\
+Solar Wind density:            & 2.1 $particles/cm^3$ \\
+Solar Wind pressure:           & 0.6 $nPa$            \\
+Sunspots number:               & 72                   \\
+Total Magnetic Field, B:       & 7.6 $nT$             \\
+B-Field in x-direction, $B_x$: & 2.6 $nT$             \\
+B-Field in y-direction, $B_y$: & -5.4 $nT$            \\
+B-Field in z-direction, $B_z$: & 4.6 $nT$             \\
+Latitude angle, $\beta$:       & 37.5$^{\circ}$       \\
+Angle, $\theta$:               & 52.5$^{\circ}$       \\
+\end{tabular}
+\\
+\\
+\\
+Also images were collected from different instruments of SOHO spacecraft, which made it clear that there were no any significant solar flares which could affect measurements at that time. The pictures are shown in Figure \ref{fig:SOHO}.
+
+\begin{figure}[h!tb]
+	\begin{subfigure}[b]{0.16\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/SOHOEIT171.jpg}
+		\caption{EIT 171}
+		\label{fig:SOHOEIT171}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/SOHOEIT195.jpg}
+		\caption{EIT 195}
+		\label{fig:SOHOEIT195}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/SOHOEIT284.jpg}
+		\caption{EIT 284}
+		\label{fig:SOHOEIT284}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/SOHOEIT304.jpg}
+		\caption{EIT 304}
+		\label{fig:SOHOEIT304}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/SOHOLASCOC2.jpg}
+		\caption{LASCO C2}
+		\label{fig:SOHOLASCOC2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/SOHOLASCOC3.jpg}
+		\caption{LASCO C3}
+		\label{fig:SOHOLASCOC3}
+	\end{subfigure}
+	\caption{SOHO instrument images}
+	\label{fig:SOHO}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4. Data analysis and discussion
