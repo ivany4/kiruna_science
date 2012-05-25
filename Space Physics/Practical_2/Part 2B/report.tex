@@ -19,6 +19,7 @@
 \usepackage{graphicx}
 \usepackage{fullpage}
 \usepackage{url}
+%\usepackage{color}
 
 % load package with ``framed'' and ``numbered'' option.
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
@@ -80,7 +81,7 @@ Electromagnetic between 20 and 30 s. Electrostatic between 55 and 60 s. x compon
 \label{fig:FGM}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{Figures/Staff_measurement.png}
 \caption{Staff Instrument Measurement Data}
@@ -98,41 +99,74 @@ The estimated plasma frequency from WHISPER is 16 kHz.
 \subsection{Question 5}
 The peaks are around 90-100 Hz. Which corresponds to our rough estimation in question 3.
 
+\clearpage
 %----------------------------------------------------------------------------------------
 %	SECTION 2. PARTICLE MEASUREMENTS
 %----------------------------------------------------------------------------------------
 \section{Particle Measurements}
 
-\subsection{Question 1}
+For this part of the practical we have been provided the particle data from the SWIM
+instrument onboard the Chandrayaan-1 spacecraft. Chandrayaan-1 orbits the moon at an altitude of 100 km. The position of the spacecraft at different times is shown in the Figures \ref{fig:orbit_1069} and \ref{fig:orbit_1070}, which also show the position of the moon with respect to Earth.
 
-\begin{figure}[htb]
+\begin{figure}[ht]
+\begin{minipage}[c]{0.5\linewidth}
+\centering
+\includegraphics[width=9cm]{Figures/orbit_1069.png}
+\caption{Position of the instrument in Orbit 1069}
+\label{fig:orbit_1069}
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}[c]{0.5\linewidth}
+\centering
+\includegraphics[width=9cm]{Figures/orbit_1070.png}
+\caption{Position of the instrument in Orbit 1070}
+\label{fig:orbit_1070}
+\end{minipage}
+\end{figure}
+
+
+\subsection{Question 1}
+\textit{Plot spectrograms, that is, the number of counts versus time and energy, for the
+two orbits. The different energy levels you find in a comment line in the data files.
+Once every orbit SWIM looks at the solar wind. Identify when this happens in the two
+orbits.}
+
+The spectrograms for the orbits 1069 and 1070 is shown in Figure \ref{fig:spectrogram_1069} and \ref{fig:spectrogram_1070} respectively. When SWIM looks at the solar wind the number of solar wind particles that hit the instrument increases significantly which is observable as the red portion in Figures \ref{fig:spectrogram_1069} and \ref{fig:spectrogram_1070}. For orbit 1069, it occurs approximately between $100th$ and $350th$ observation time bin which corresponds to UTC 05:29 to UTC 06:02 hours. For orbit 1070, it occurs approximately between $25th$ and $250th$ observation time bin which corresponds to UTC 07:22 to UTC 08:12 hours.
+
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.35]{Figures/spectrogram_1069.png}
 \caption{Spectrogram of the 1069 Orbit}
 \label{fig:spectrogram_1069}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.35]{Figures/spectrogram_1070.png}
 \caption{Spectrogram of the 1070 Orbit}
 \label{fig:spectrogram_1070}
 \end{figure}
 
-
-
 \subsection{Question 2}
+\textit{Protons are the main ions in the solar wind, but can you identify any other
+components? Motivate you answer!}
+
+{\color{red} Helium double plus. I am not sure.}
 
 \subsection{Question 3}
+\textit{Make energy spectra, this is, plot observed counts versus energy for a selected
+time interval around the solar wind observation.}
 
-\begin{figure}[htb]
+The energy spectra for the time when the SWIM instrument looks at the solar wind for the orbit 1069 and orbit 1070 is shown in Figure \ref{fig:energy_spectra_1069} and \ref{fig:energy_spectra_1070} respectively
+
+\begin{figure}[h!]
 \centering
 \includegraphics[scale = 0.35]{Figures/energy_spectra_1069.png}
 \caption{Energy Spectra of the 1069 Orbit}
 \label{fig:energy_spectra_1069}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[h!]
 \centering
 \includegraphics[scale = 0.35]{Figures/energy_spectra_1070.png}
 \caption{Energy Spectra of the 1070 Orbit}
@@ -140,6 +174,10 @@ The peaks are around 90-100 Hz. Which corresponds to our rough estimation in que
 \end{figure}
 
 \subsection{Question 4}
+\textit{Determine the solar wind proton velocity and temperature by first transforming the
+data from energy to velocity space and then fitting a Maxwellian distribution. What
+temperatures and velocities do you get? Are there differences between the orbits? If
+so, why?}
 
 \begin{figure}[!ht]
 \centering

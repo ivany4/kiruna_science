@@ -20,11 +20,11 @@ xlabel('Energy level [eV]')
 ylabel('Time')
 
 fid = fopen('orb_1070_swim.csv');
-A = textscan(fid, '%*11c %2d %*1c %2d %*1c %2d %*4s  %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f', 'commentStyle', '#', 'CollectOutput', 1);
+B = textscan(fid, '%*11c %2d %*1c %2d %*1c %2d %*4s  %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f', 'commentStyle', '#', 'CollectOutput', 1);
 fclose(fid);
 
-t = A{1};
-data_1070 = A{2};
+t = B{1};
+data_1070 = B{2};
 hh = t(:,1);
 t_index = 1:length(hh);
 energy_levels=[106;132;165;206;258;322;403;503;629;786;983;1229;1536;1920;2400;3000];

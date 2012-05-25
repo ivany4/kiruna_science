@@ -5,10 +5,10 @@
 \contentsline {subsection}{\numberline {2.3}Question 3}{3}
 \contentsline {subsection}{\numberline {2.4}Question 4}{4}
 \contentsline {subsection}{\numberline {2.5}Question 5}{4}
-\contentsline {section}{\numberline {3}Particle Measurements}{4}
-\contentsline {subsection}{\numberline {3.1}Question 1}{4}
-\contentsline {subsection}{\numberline {3.2}Question 2}{4}
-\contentsline {subsection}{\numberline {3.3}Question 3}{4}
-\contentsline {subsection}{\numberline {3.4}Question 4}{4}
-\contentsline {section}{\numberline {4}Conclusion}{4}
-\contentsline {section}{\numberline {5}Appendix 1. Matlab code}{6}
+\contentsline {section}{\numberline {3}Particle Measurements}{6}
+\contentsline {subsection}{\numberline {3.1}Question 1}{6}
+\contentsline {subsection}{\numberline {3.2}Question 2}{6}
+\contentsline {subsection}{\numberline {3.3}Question 3}{6}
+\contentsline {subsection}{\numberline {3.4}Question 4}{7}
+\contentsline {section}{\numberline {4}Conclusion}{8}
+\contentsline {section}{\numberline {5}Appendix 1. Matlab code}{10}
