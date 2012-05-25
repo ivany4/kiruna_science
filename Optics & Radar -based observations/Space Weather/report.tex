@@ -141,8 +141,26 @@ Also images were collected from different instruments of SOHO spacecraft, which 
 	\label{fig:SOHO}
 \end{figure}
 
+In the next step, the International Reference Ionosphere (IRI) model was retrieved from the website \url{http://iri.gsfc.nasa.gov}. The time and the coordinates of the experiment were entered for this model. The vertical profile of the electron density according to IRI model is plotted in Figure \ref{fig:iri}.
+\begin{figure}[h!tb]
+	\begin{minipage}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/iri.png}
+		\caption{Electron density from IRI model.}
+		\label{fig:iri}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/density.png}
+		\caption{Uncalibrated density from ESR measurements.}
+		\label{fig:density}
+	\end{minipage}
+\end{figure}
+The real measurements from ESR were got by running "EISCAT for dummies" script, which created a bunch of *.mat files. All these files had number densities for the same height which were slightly different. Although altitude data also was not the same among the files, the difference was just tens of meters. It was decided to average measurements by taking mean values of altitudes as well as number densities. In the end, the vertical profile of averaged electron density $N_e$ was plotted, as shown in Figure \ref{fig:density}.\\
+Comparing two electron density signatures yields to the conclusion that, even though the shapes of the densities are similar, they have quite a big difference. It is seen that maximum electron density in IRI model occurs at approximately 300 km altitude, whereas in EISCAT measurements it is just slightly less than 250 km. Moreover, EISCAT maximum electron density is $3.936*10^{11}\:m^{-3}$, while IRI model show around $5.35*10^{11}\:m^{-3}$. Such a behavior makes it clear that ESR data is not calibrated.
+
 %----------------------------------------------------------------------------------------
-%	SECTION 4. Data analysis and discussion
+%	SECTION 4. Conclusion
 %----------------------------------------------------------------------------------------
 
 \section{Conclusion}
