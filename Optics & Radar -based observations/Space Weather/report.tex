@@ -11,7 +11,7 @@
 
 \documentclass{article}
 
-\title{\textbf {Optics and Radar Based Observations} \\ Practical\\ EISCAT ESR – incoherent scatter and weather in space} % Title
+\title{\textbf {Optics and Radar Based Observations} \\ Practical\\ EISCAT ESR - incoherent scatter and weather in space} % Title
 \def\authorivan{Ivan \v Sinkarenko}
 \def\authoranu{Anuraj Rajendraprakash}
 \author{\authorivan\\\authoranu}
@@ -64,7 +64,7 @@ List of used commands during the experiment:
 \item \textbf{disablerecording}: Stop recording data.
 \item \textbf{stopexperiment}: Stop experiment immediately.
 \end{itemize}
-During the experiment data has been observed in real time with help of the real time graph software \emph{rtg}.
+During the experiment data has been observed in real time with help of the real time graph software \emph{rtg}. Later on, raw data was collected from the EISCAT servers and used for "GUISDAP" Matlab script to compute final measurement data.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3. Data analysis and discussion
@@ -101,38 +101,33 @@ Angle, $\theta$:               & 52.5$^{\circ}$       \\
 Also images were collected from different instruments of SOHO spacecraft, which made it clear that there were no any significant solar flares which could affect measurements at that time. The pictures are shown in Figure \ref{fig:SOHO}.
 
 \begin{figure}[h!tb]
+	\centering
 	\begin{subfigure}[b]{0.16\textwidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/SOHOEIT171.jpg}
 		\caption{EIT 171}
 		\label{fig:SOHOEIT171}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.16\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/SOHOEIT195.jpg}
 		\caption{EIT 195}
 		\label{fig:SOHOEIT195}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.16\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/SOHOEIT284.jpg}
 		\caption{EIT 284}
 		\label{fig:SOHOEIT284}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.16\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/SOHOEIT304.jpg}
 		\caption{EIT 304}
 		\label{fig:SOHOEIT304}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.16\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/SOHOLASCOC2.jpg}
 		\caption{LASCO C2}
 		\label{fig:SOHOLASCOC2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.16\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/SOHOLASCOC3.jpg}
 		\caption{LASCO C3}
 		\label{fig:SOHOLASCOC3}
@@ -141,23 +136,57 @@ Also images were collected from different instruments of SOHO spacecraft, which 
 	\label{fig:SOHO}
 \end{figure}
 
-In the next step, the International Reference Ionosphere (IRI) model was retrieved from the website \url{http://iri.gsfc.nasa.gov}. The time and the coordinates of the experiment were entered for this model. The vertical profile of the electron density according to IRI model is plotted in Figure \ref{fig:iri}.
+In the next step, the International Reference Ionosphere (IRI) model was retrieved from the website \url{http://iri.gsfc.nasa.gov}. The time and the coordinates of the experiment were entered for this model. The vertical profile of the electron number density according to IRI model is plotted in Figure \ref{fig:iri}.
 \begin{figure}[h!tb]
+	\centering
 	\begin{minipage}[t]{0.45\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/iri.png}
 		\caption{Electron density from IRI model.}
 		\label{fig:iri}
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{Figures/density.png}
 		\caption{Uncalibrated density from ESR measurements.}
 		\label{fig:density}
 	\end{minipage}
 \end{figure}
-The real measurements from ESR were got by running "EISCAT for dummies" script, which created a bunch of *.mat files. All these files had number densities for the same height which were slightly different. Although altitude data also was not the same among the files, the difference was just tens of meters. It was decided to average measurements by taking mean values of altitudes as well as number densities. In the end, the vertical profile of averaged electron density $N_e$ was plotted, as shown in Figure \ref{fig:density}.\\
-Comparing two electron density signatures yields to the conclusion that, even though the shapes of the densities are similar, they have quite a big difference. It is seen that maximum electron density in IRI model occurs at approximately 300 km altitude, whereas in EISCAT measurements it is just slightly less than 250 km. Moreover, EISCAT maximum electron density is $3.936*10^{11}\:m^{-3}$, while IRI model show around $5.35*10^{11}\:m^{-3}$. Such a behavior makes it clear that ESR data is not calibrated.
+The real measurements from ESR were got by running "GUIDSDAP" script, which created a bunch of *.mat files. All these files had number densities for the same height which were slightly different. Although altitude data also was not the same among the files, the difference was just tens of meters. It was decided to average measurements by taking mean values of altitudes as well as number densities. In the end, the vertical profile of averaged electron number density $N_e$ was plotted, as shown in Figure \ref{fig:density}.\\
+Comparing two electron number density signatures yields to the conclusion that, even though the shapes of the densities are similar, they have quite a big difference. It is seen that maximum electron number density in IRI model occurs at approximately 300 km altitude, whereas in EISCAT measurements it is just slightly less than 250 km. Moreover, EISCAT maximum electron number density is $3.936*10^{11}\:m^{-3}$, while IRI model show around $5.35*10^{11}\:m^{-3}$. Such a behavior makes it clear that ESR data is not calibrated.\\
+\\
+One more way to ensure that the data needs to be calibrated is to compare electron number density with the one from another source, for instance, dynasonde. Dynasonde is an ionosonde competent to measure the dynamics of the ionosphere. \cite{Ngdc:2004d} An ionosonde is a special radar for the examination of the ionosphere. The transmitter sweeps all or part of the HF frequency range, transmitting short pulses. These pulses are reflected at various layers of the ionosphere, at heights of 100-400 km, and their echos are received by the receiver and analyzed by the control system. The result is displayed in the form of an ionogram, a graph of reflection height (actually time between transmission and reception of pulse) versus carrier frequency. \cite{Wiki:2012i} EISCAT runs its own dynasonde, which among all other values provided has $f_0F2$ coefficient. $f_0F2$ is related to electron number density $N_e$ as described in Equation \ref{eq:f0f2}
+\begin{equation}
+\label{eq:f0f2}
+f_0F2=\frac{\sqrt{\frac{N_e\,e^2}{\epsilon_0\,m_e}}}{2\pi}
+\end{equation}
+where $N_e$ is electron number density, $\epsilon_0$ is electric constant, $e$ is electron charge and $m_e$ is electron mass.\\
+\\
+Using this equation electron number densities were calculated from the dynasonde data and maximum value has been found: $5.634512*10^{11}\:m^{-3}$. This value has a 30.2\% difference with $3.936*10^{11}\:m^{-3}$, which has been derived earlier from the ESR measurements. According to EISCAT guidelines, if the values differ from each other more than 10\% the electron number density profile should be calibrated. Calibration is performed by defining a Magic constant. The Magic constant has been introduced and agreed by EISCAT HQ in order to take into account the effect of external environment on the transmitted power, i.e. snow on the antenna etc. The Magic constant is a scale factor for the real radar constant. \cite{Barabash:2011esr} It is calculated from Equation \ref{eq:mag_cnst}.
+\begin{equation}
+\label{eq:mag_cnst}
+Magic\_const=\frac{N_{e_{dynasonde}}}{N_{e_{EISCAT}}}
+\end{equation}
+Given the values, Magic constant was calculated and added to "GUISDAP" Matlab script as a parameter "Magic\_const = 1.431642". Once calibrated data was got, all the above steps were applied for it. The resulting electron number density plot is shown in Figure \ref{fig:density_cal}.
+\begin{figure}[h!tb]
+		\centering
+	\begin{minipage}[t]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{Figures/density_cal.png}
+		\caption{Calibrated density from ESR measurements with spikes.}
+		\label{fig:density_cal}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{Figures/density_cal_no_spikes.png}
+		\caption{Calibrated density from ESR measurements without spikes.}
+		\label{fig:density_cal_no_spikes}
+	\end{minipage}
+\end{figure}
+This graph contains very long spike at altitude of 500 km which is not common. One possible explanation is that during the experiment an object with high reflective properties entered the field view of the radar. Actually, EISCAT assistant mentioned once that there was a spacecraft crossing studied area during the experiments. However, uncalibrated data did not contain such an enormous anomaly in measurements. Thus, the reason is still remaining uncertain. To continue data interpretation, condition was inserted to eliminate such spikes. Basically, if it detects variations larger than factor of 10, it takes a mean value of two adjacent density values. The vertical profile of calibrated electron densities with spikes removed is shown in Figure \ref{fig:density_cal_no_spikes}. The maximum number density with this data is $5.590073*10^{11}\:m^{-3}$, which is different from the maximum density calculated using $f_0F2$ coefficient only by 0.8\%. The calibrated and refined density profile also was compared with IRI model profile as shown in Figure \ref{fig:iri_eiscat}. This time data match is much more accurate. It proves that calibration using Magic constant is accurate enough and the calibrated data is reliable. However, profiles are still not perfectly similar. This can happen because of several reasons, for example, snow lying on the radar dish. The small downward shift could be caused by an active electric field present in the ionosphere. \cite{Stoffregen:1969ed} Also for the altitudes below 300 km there is bigger downward shift which might be caused by reflection because of the presence of a wave in the solar wind, however this is not likely, because investigation of the space weather showed that there were no strong solar flares during the relevant time period.
+\begin{figure}[h!tb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/iri_eiscat.png}
+	\caption{Calibrated density from ESR measurements (blue) and IRI model (red).}
+	\label{fig:iri_eiscat}
+\end{figure}
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4. Conclusion
@@ -183,8 +212,23 @@ Wikipedia.org. (2012).
 
 \bibitem{Barabash:2011esr}
 EISCAT HQ / Barabash V. (2011).
-\newblock {\em Practical. EISCAT ESR – incoherent scatter and weather in space}.
+\newblock {\em Practical. EISCAT ESR - incoherent scatter and weather in space}.
 \newblock Lule\aa \ University of Technology, Kiruna, Sweden.
+
+\bibitem{Wiki:2012i}
+Wikipedia.org. (2012).
+\newblock {\em Ionosonde}.
+\newblock {\url{http://en.wikipedia.org/wiki/Ionosonde}}.
+
+\bibitem{Ngdc:2004d}
+National Geophysical Data Center (NGDC) (2004).
+\newblock {\em What is a Dynasonde?}.
+\newblock {\url{http://www.ngdc.noaa.gov/stp/IONO/Dynasonde/whatis.htm#Dynasonde}}.
+
+\bibitem{Stoffregen:1969ed}
+W. Stoffregen (1969).
+\newblock {\em Electron density variation observed in the E-layer below an artificial barium cloud}.
+\newblock {Uppsala Ionospheric Observatory, Research Institute of Swedish National Defence, Uppsala, Sweden}.
 
 \bibitem{Skolnik:2001irs}
 Skolnik M. ~I.  (2001).
