@@ -31,7 +31,7 @@
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number
+\renewcommand{\labelenumi}{\alph{enumi}} % Make numbering in the enumerate environment by letter rather than number
 \clearpage
 
 \tableofcontents
@@ -43,6 +43,15 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1. Introduction
 %----------------------------------------------------------------------------------------
+\section{Introduction}
+
+    
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2. Time Series Data
+%----------------------------------------------------------------------------------------
+\section{Time Series Data}
+
 \subsection{Question 1}
 The measurment taken on 2002-03-02 at 03:29-03:30 is taken at the time when the satellite was crossing the border of magnetopause.
 
@@ -52,12 +61,6 @@ The measurment taken on 2002-03-02 at 03:29-03:30 is taken at the time when the 
 \caption{Cluster Quicklook 6-hours overview.}
 \label{fig:cluster}
 \end{figure}
-    
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2. Time Series Data
-%----------------------------------------------------------------------------------------
-\section{Time Series Data}
 
 \subsection{Question 2}
 
@@ -88,12 +91,68 @@ Electromagnetic between 20 and 30 s. Electrostatic between 55 and 60 s. x compon
 Roughly estimated wave period is about 0.01 s (zoomed in and estimated between 2 peaks). Frequency = 1/0.01 = 100 Hz.
 
 \subsection{Question 4}
-From overview data, ion density is ~1.5 #/cm^3. 
+From overview data, ion density is $~1.5 cm^3$. 
 
 The estimated plasma frequency from WHISPER is 16 kHz.
 
 \subsection{Question 5}
 The peaks are around 90-100 Hz. Which corresponds to our rough estimation in question 3.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2. PARTICLE MEASUREMENTS
+%----------------------------------------------------------------------------------------
+\section{Particle Measurements}
+
+\subsection{Question 1}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Figures/spectrogram_1069.png}
+\caption{Spectrogram of the 1069 Orbit}
+\label{fig:spectrogram_1069}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Figures/spectrogram_1070.png}
+\caption{Spectrogram of the 1070 Orbit}
+\label{fig:spectrogram_1070}
+\end{figure}
+
+\subsection{Question 2}
+
+\subsection{Question 3}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Figures/energy_spectra_1069.png}
+\caption{Energy Spectra of the 1069 Orbit}
+\label{fig:energy_spectra_1069}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Figures/energy_spectra_1070.png}
+\caption{Energy Spectra of the 1070 Orbit}
+\label{fig:energy_spectra_1070}
+\end{figure}
+
+\subsection{Question 4}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Figures/velocity_spectra_1069.png}
+\caption{Velocity Spectra of the 1069 Orbit}
+\label{fig:Velocity_spectra_1069}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Figures/velocity_spectra_1070.png}
+\caption{Velocity Spectra of the 1070 Orbit}
+\label{fig:Velocity_spectra_1070}
+\end{figure}
+
 %----------------------------------------------------------------------------------------
 %	SECTION 3. CONCLUSION
 %----------------------------------------------------------------------------------------
