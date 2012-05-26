@@ -90,17 +90,17 @@ B_total = sqrt(B_sum);
 % grid on
 
 % Gyro Frequencies
-gyro_freq_e_max = q * (max(B_total)*1e-12) / (2 * pi * me)
-gyro_freq_e_min = q * (min(B_total)*1e-12) / (2 * pi * me)
-gyro_freq_p_max = q * (max(B_total)*1e-12) / (2 * pi * mp)
-gyro_freq_p_min = q * (min(B_total)*1e-12) / (2 * pi * mp)
+gyro_freq_e_max = q * (max(B_total)*1e-12) / (2 * pi * me);
+gyro_freq_e_min = q * (min(B_total)*1e-12) / (2 * pi * me);
+gyro_freq_p_max = q * (max(B_total)*1e-12) / (2 * pi * mp);
+gyro_freq_p_min = q * (min(B_total)*1e-12) / (2 * pi * mp);
 ne = 4e6; 
-freq_plasma = (sqrt((ne * (q^2)) / (me * eps))/(2*pi))
+freq_plasma = (sqrt((ne * (q^2)) / (me * eps))/(2*pi));
 
 %estimated density from WHISPER data..
 f_pe = 20E+3;
-n_e = (f_pe/8980)^2
-freq_plasma = (sqrt((4.9603 * (q^2)) / (me * eps))/(2*pi)) % CHECK!
+n_e = (f_pe/8980)^2;
+freq_plasma = (sqrt((4.9603 * (q^2)) / (me * eps))/(2*pi)) ;% CHECK!
 
 % Question 5 & 6:
 % 
