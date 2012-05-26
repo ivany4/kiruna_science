@@ -94,8 +94,8 @@ ylabel('Counts')
 xlabel('Velocity [m/s]')
 hold on
 
-z=abs(lsqcurvefit(@maxwellian,[.01,.1000,.300000],levels,velocity1));
-xdata=0:1:3000;
-plot(xdata,maxwellian(z,xdata));
-z2=abs(lsqcurvefit(@maxwellian,[.01,.1000,.300000],levels,velocity2));
-plot(xdata,maxwellian(z2,xdata));
+% z=abs(lsqcurvefit(@maxwellian,[.01,.1000,.300000],levels,velocity1));
+% xdata=0:1:3000;
+% plot(xdata,maxwellian(z,xdata));
+% z2=abs(lsqcurvefit(@maxwellian,[.01,.1000,.300000],levels,velocity2));
+% plot(xdata,maxwellian(z2,xdata));
