@@ -126,32 +126,33 @@ freq_plasma = (sqrt((4.9603 * (q^2)) / (me * eps))/(2*pi)) ;% CHECK!
 
 % [vpsd,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs]=PSDvsFREQ(ex,ey,ez,FSAMP,NK,Kstart,Kshift,N,NG,GW) 
  
-%  [vpsd_E,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs_E]= PSDvsFREQ(E_x_gse,E_y_gse,ez,25,11,1,512,2048,2048,512); 
+ [vpsd_E,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs_E]= PSDvsFREQ(E_x_gse,E_y_gse,ez,500,11,1,512,2048,2048,512); 
  
 % [vpsd_E,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs_E]= PSDvsFREQ(E_x_gse,E_y_gse,ez,25,11,1,128,128,128,32); 
 %  
-%  figure
-%  plot(vfreqs_E,log(vpsd_E));
-% %  errorbar(vfreqs_E, log(vpsd_E),vpsddev,'.-r', 'LineWidth', 1);
-%  title('PSD of the Electric Field');
-%  xlabel('Frequency [Hz]');
-%  ylabel('Spectral density');
+ figure
+ plot(vfreqs_E,log(vpsd_E));
+ errorbar(vfreqs_E, log(vpsd_E),vpsddev,'.-r', 'LineWidth', 1);
+ title('PSD of the Electric Field');
+ xlabel('Frequency [Hz]');
+ ylabel('Spectral density');
+ xlim([0 225])
  
  %% PSD of the Magnetic Field:
  
 % [vpsd,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs]=PSDvsFREQ(bx,by,bz,FSAMP,NK,Kstart,Kshift,N,NG,GW) 
  
-% [vpsd_B,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs_B]= PSDvsFREQ(B_x_gse_staff,B_y_gse_staff,B_z_gse_staff,25,11,1,512,2048,2048,512);
+[vpsd_B,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs_B]= PSDvsFREQ(B_x_gse_staff,B_y_gse_staff,B_z_gse_staff,500,11,1,512,2048,2048,512);
  
 % [vpsd_B,vpsddev,vpsdx,vpsdxdev,vpsdy,vpsdydev,vpsdz,vpsdzdev,vfreqs_B]= PSDvsFREQ(B_x_gse_staff,B_y_gse_staff,B_z_gse_staff,25,11,1,128,128,128,32);
 %  
-% figure
-% plot(vfreqs_B,log(vpsd_B));
-% % errorbar(vfreqs_B, log(vpsd_B), vpsddev,'.-r', 'LineWidth', 1);
-%  title('PSD of the Magnetic Field');
-%  xlabel('Frequency [Hz]');
-%  ylabel('Spectral density');
-%  
+figure
+plot(vfreqs_B,log(vpsd_B));
+errorbar(vfreqs_B, log(vpsd_B), vpsddev,'.-r', 'LineWidth', 1);
+ title('PSD of the Magnetic Field');
+ xlabel('Frequency [Hz]');
+ ylabel('Spectral density');
+ xlim([0 225])
 % Question 7:
 
 % INPUT 
@@ -181,10 +182,10 @@ freq_plasma = (sqrt((4.9603 * (q^2)) / (me * eps))/(2*pi)) ;% CHECK!
 
 % Spectogram of the Electric Field
 
-%[vpsd,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags,vfreqs]= means(bx, by, bz, FSAMP, NK, Kstart, Kshift, N, NG, GW, ntshift, ntaver); 
-
+% [vpsd,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags,vfreqs]= means(bx, by, bz, FSAMP, NK, Kstart, Kshift, N, NG, GW, ntshift, ntaver); 
+% 
 % [vpsd_E,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags_E,vfreqs_E]=means(E_x_gse,E_y_gse,ez, 25, 16, 1, 128, 256, 256, 256, 256, 5);
-
+% 
 % [vpsd_E,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags_E,vfreqs_E]=means(E_x_gse,E_y_gse,ez, 25, 112, 1, 128, 1024, 1024, 256, 256, 5);
 % 
 % 
@@ -195,11 +196,11 @@ freq_plasma = (sqrt((4.9603 * (q^2)) / (me * eps))/(2*pi)) ;% CHECK!
 % title('Spectogram of the Electric Field');
 % xlabel('Time');
 % ylabel('Frequency');
-
+% 
 % Spectogram of the Magnetic Field
-
-%[vpsd,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags,vfreqs]= means(bx, by, bz, FSAMP, NK, Kstart, Kshift, N, NG, GW, ntshift, ntaver); 
-
+% 
+% [vpsd,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags,vfreqs]= means(bx, by, bz, FSAMP, NK, Kstart, Kshift, N, NG, GW, ntshift, ntaver); 
+% 
 % [vpsd_B,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags_B,vfreqs_B]=means(B_x_gse_staff,B_y_gse_staff,B_z_gse_staff, 25, 16, 1, 128, 256, 256, 256, 256, 5);
 % 
 % [vpsd_B,vpsdz,vpsddev,vkx,vky,vkz,vkxs,vkys,vkzs,vttags_B,vfreqs_B]=means(B_x_gse_staff,B_y_gse_staff,B_z_gse_staff, 25, 112, 1, 128, 1024, 1024, 256, 256, 5);
@@ -212,45 +213,46 @@ freq_plasma = (sqrt((4.9603 * (q^2)) / (me * eps))/(2*pi)) ;% CHECK!
 % title('Spectogram of the Magnetic Field');
 % xlabel('Time');
 % ylabel('Frequency');
+
 %% HODOGRAM
 
-B_0 = [time_FGM_STAFF B_x_gse_fgm B_y_gse_fgm B_z_gse_fgm];
-
-B_wave = [time_FGM_STAFF B_x_gse_staff B_y_gse_staff B_z_gse_staff];
-B_wave_transf = OBsystem(B_wave, B_0);
-
-E_wave = [time_EFW E_x_gse E_y_gse];
-E_wave = thirdE(B_0, E_wave);
-E_wave_transf = OBsystem(E_wave, B_0);
-
-for i = 1:length(B_wave_transf)
-    B_norm = sqrt(B_wave_transf(i,2)*B_wave_transf(i,2) + B_wave_transf(i,3)*B_wave_transf(i,3) + B_wave_transf(i,4)*B_wave_transf(i,4));
-    B_wave_transf(i,:) = B_wave_transf(i,:)/B_norm;
-end
-
-for i = 1:length(E_wave_transf)
-    E_norm = sqrt(E_wave_transf(i,2)*E_wave_transf(i,2) + E_wave_transf(i,3)*E_wave_transf(i,3) + E_wave_transf(i,4)*E_wave_transf(i,4));
-    E_wave_transf(i,:) = E_wave_transf(i,:)/E_norm;
-end
-
-figure
-% plot(E_wave_transf(1,2),E_wave_transf(1,3),'.r','o', 'color', 'r')
-plot(E_wave_transf(1,2),E_wave_transf(1,3),'.-r')
-hold on
-plot(E_wave_transf(1:10000,2),E_wave_transf(1:10000,3),'.-r')
-title('Hodogram of the Electric Field Wave Field Vector' );
-xlabel('Normalized E_x');
-ylabel('Normalized E_y');
-xlim([-1 1])
-ylim([-1 1])
-
-figure
-% plot(B_wave_transf(1,2),B_wave_transf(1,3),'.r','o', 'color', 'r')
-plot(B_wave_transf(1,2),B_wave_transf(1,3),'.-r')
-hold on
-plot(B_wave_transf(1:200,2),B_wave_transf(1:200,3),'.-r')
-title('Hodogram of the Magnetic Field Wave Field Vector' );
-xlabel('Normalized B_x');
-ylabel('Normalized B_y');
-xlim([-1 1])
-ylim([-1 1])
+% B_0 = [time_FGM_STAFF B_x_gse_fgm B_y_gse_fgm B_z_gse_fgm];
+% 
+% B_wave = [time_FGM_STAFF B_x_gse_staff B_y_gse_staff B_z_gse_staff];
+% B_wave_transf = OBsystem(B_wave, B_0);
+% 
+% E_wave = [time_EFW E_x_gse E_y_gse];
+% E_wave = thirdE(B_0, E_wave);
+% E_wave_transf = OBsystem(E_wave, B_0);
+% 
+% for i = 1:length(B_wave_transf)
+%     B_norm = sqrt(B_wave_transf(i,2)*B_wave_transf(i,2) + B_wave_transf(i,3)*B_wave_transf(i,3) + B_wave_transf(i,4)*B_wave_transf(i,4));
+%     B_wave_transf(i,:) = B_wave_transf(i,:)/B_norm;
+% end
+% 
+% for i = 1:length(E_wave_transf)
+%     E_norm = sqrt(E_wave_transf(i,2)*E_wave_transf(i,2) + E_wave_transf(i,3)*E_wave_transf(i,3) + E_wave_transf(i,4)*E_wave_transf(i,4));
+%     E_wave_transf(i,:) = E_wave_transf(i,:)/E_norm;
+% end
+% 
+% figure
+% % plot(E_wave_transf(1,2),E_wave_transf(1,3),'.r','o', 'color', 'r')
+% plot(E_wave_transf(1,2),E_wave_transf(1,3),'.-r')
+% hold on
+% plot(E_wave_transf(1:10000,2),E_wave_transf(1:10000,3),'.-r')
+% title('Hodogram of the Electric Field Wave Field Vector' );
+% xlabel('Normalized E_x');
+% ylabel('Normalized E_y');
+% xlim([-1 1])
+% ylim([-1 1])
+% 
+% figure
+% % plot(B_wave_transf(1,2),B_wave_transf(1,3),'.r','o', 'color', 'r')
+% plot(B_wave_transf(1,2),B_wave_transf(1,3),'.-r')
+% hold on
+% plot(B_wave_transf(1:200,2),B_wave_transf(1:200,3),'.-r')
+% title('Hodogram of the Magnetic Field Wave Field Vector' );
+% xlabel('Normalized B_x');
+% ylabel('Normalized B_y');
+% xlim([-1 1])
+% ylim([-1 1])
