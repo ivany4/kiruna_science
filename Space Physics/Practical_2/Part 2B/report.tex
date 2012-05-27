@@ -19,7 +19,7 @@
 \usepackage{graphicx}
 \usepackage{fullpage}
 \usepackage{url}
-%\usepackage{color}
+\usepackage{color}
 
 % load package with ``framed'' and ``numbered'' option.
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
@@ -59,7 +59,7 @@ answer!}
 
 The measurment taken on 2002-03-02 at 03:29-03:30 is taken at the time when the satellite was crossing the border of magnetopause.
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/cluster.png}
 \caption{Cluster Quicklook 6-hours overview.}
@@ -71,14 +71,14 @@ The measurment taken on 2002-03-02 at 03:29-03:30 is taken at the time when the 
 
 Electromagnetic between 20 and 30 s. Electrostatic between 55 and 60 s. x component is facing towards the sun. It should fluctuate around zero, like the y-component does it. It happens because of the photon emission, which is captured by the probes. Thus, data correction is needed.
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{Figures/EFW_measurement.png}
 \caption{EFW Measurement Data}
 \label{fig:EFW}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{Figures/FGM_measurement.png}
 \caption{FGM Measurement Data}
@@ -100,16 +100,16 @@ Roughly estimated wave period is about 0.01 s (zoomed in and estimated between 2
 \subsection{Question 4}
 \textit{Compute the fundamental frequencies (electron and proton gyrofrequencies and the electron plasma frequency) in the plasma. The background magnetic field you have in the data. The density can be found from the overview data. However, the ion density is usually underestimated. Therefore, it is a good idea to compare with the high frequency emissions obtained by the WHISPER instrument. In the WHISPER data you can identify the electron plasma frequency directly, as a thin horizontal line visible most of the time. What density does the WHISPER signal correspond to? Compare the wave frequency with the fundamental frequencies. What are you conclusions?}
 
-From overview data, ion density is $~1.5 cm^3$. 
+From overview data, ion density is $~1.5 cm^3$. The minimum and maximum Electron gyrofrequency are 0.82 kHz and 0.88 kHz respectively while the minimum and maximum Proton gyrofrequency is $4.5 X 10^{-4}$ Hz and $4.8 X 10^{-4}$ Hz respectively. The electron Plasma frequency is 10.9 kHz considering a density of $~1.5 cm^3$. The estimated plasma frequency from WHISPER is 16 kHz.
 
-The estimated plasma frequency from WHISPER is 16 kHz.
 
 \subsection{Question 5}
-\textit{Compute the PSD of the electric and magnetic wave fields for the entire time period. If you want you can use the Matlab-function PSDvsFREQ(). Compare with your results obtained in 2 and 3. Change the resolution of the PSD to clearly resolve the frequencies you found in 2. The frequency resolution is given by $Δf=1/NΔt$, where Δt is the time between two samples and N is the record length used in the Fourier transform.}
+\textit{Compute the PSD of the electric and magnetic wave fields for the entire time period. If you want you can use the Matlab-function PSDvsFREQ(). Compare with your results obtained in 2 and 3. Also, investigate the how the error changes when you sum over fewer records. If you want you can use the errorbar() function to visualize this. Which are your
+conclusions?}\\
 
-The peaks are around 90-100 Hz. Which corresponds to our rough estimation in question 3.
+The Figures \ref{fig:PSD_electric} and \ref{fig:PSD_magnetic} show the PSD of electric and magnetic field respectively. The Figures \ref{fig:PSD_electric_error} and \ref{fig:PSD_magnetic_error} show the PSD with error bars. The peaks are around 90-100 Hz. Which corresponds to our rough estimation in question 3. The Figures \ref{fig:PSD_magnetic_errorL} and \ref{fig:PSD_electric_errorL} show the PSD of electric and magnetic fields when fewer records have been used. It can bee seen the the error is less when less records are used. 
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/PSD_electric.png}
@@ -125,7 +125,7 @@ The peaks are around 90-100 Hz. Which corresponds to our rough estimation in que
 \end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/PSD_magnetic.png}
@@ -141,46 +141,51 @@ The peaks are around 90-100 Hz. Which corresponds to our rough estimation in que
 \end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/PSD_electric_L.png}
 \caption{PSD of Electric Field with less records}
-\label{fig:PSD_electric}
+\label{fig:PSD_electric_L}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/PSD_electric_errorL.png}
 \caption{PSD with Error Bar and less records}
-\label{fig:PSD_electric_error}
+\label{fig:PSD_electric_errorL}
 \end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/PSD_magnetic_L.png}
 \caption{PSD of Magnetic Field with less records.}
-\label{fig:PSD_magnetic}
+\label{fig:PSD_magnetic_L}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/PSD_magnetic_errorL.png}
 \caption{PSD with Error Bar with less records}
-\label{fig:PSD_magnetic_error}
+\label{fig:PSD_magnetic_errorL}
 \end{minipage}
 \end{figure}
 
 
 \subsection{Question 6}
-\textit{Look at (=make PSDs for) two different frequency ranges: 0-225 Hz and 0-2 Hz. You should aim at good statistics so the frequency resolution should be different in the two plots. The frequency resolution is given by $Δf=1/NΔt$, where Δt is the time between two samples and N is the record length used in the Fourier transform. For each of the plots: provide all the information about the PSD you present: The length of the record, the shift between records and the total number of records used.}
+\textit{Look at (=make PSDs for) two different frequency ranges: 0-225 Hz and 0-2 Hz. You should aim at good statistics so the frequency resolution should be different in the two plots. The frequency resolution is given by $Δf=1/NΔt$, where Δt is the time between two samples and N is the record length used in the Fourier transform. For each of the plots: provide all the information about the PSD you present: The length of the record, the shift between records and the total number of records used.}\\
+
+{\color{red} I don't know this one.}
+
 
 \subsection{Question 7}
-\textit{Plot spectrograms (=PSD versus time and frequency) of both the electric and magnetic fields. You can do this by using the Matlab function means() and ignoring the wave vector output. Try different resolutions in time and frequency.What are you conclusions?}
+\textit{Plot spectrograms (=PSD versus time and frequency) of both the electric and magnetic fields. You can do this by using the Matlab function means() and ignoring the wave vector output. Try different resolutions in time and frequency.What are you conclusions?}\\
 
-\begin{figure}[ht]
+The Figures \ref{fig:spectrogram_electricHR} and \ref{fig:spectrogram_magneticHR} show the spectrogram of electric and magnetic field respectively. There is an increase in the power at all frequencies at about time 300 seconds. This might be when the spacecraft is close to the magnetopause. The Figures \ref{fig:spectrogram_electricLR} and \ref{fig:spectrogram_magneticLR} show the spectrogram with lower resolution in time and frequency, which makes it difficult to clear identify the region of high spectral power density.
+
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/spectrogram_electricHR.png}
@@ -196,7 +201,7 @@ The peaks are around 90-100 Hz. Which corresponds to our rough estimation in que
 \end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/spectrogram_electricLR.png}
@@ -213,21 +218,23 @@ The peaks are around 90-100 Hz. Which corresponds to our rough estimation in que
 \end{figure}
 
 \subsection{Question 8}
-\textit{Now we can produce a so-called hodogram , which shows how the wave field vector moves in the plane perpendicular to B0. If the field vector moves in the same direction as a positive ion would gyrate then the wave is left-hand polarized. If the vector rotates in the opposite direction the wave is righthand polarized. Plot the magnetic field vector in this plane and determine the polarization of the waves. Sometimes it is easier to see the rotation if you normalize the length of the vectors to 1. Do the same with the electric field wave vector.}
+\textit{Now we can produce a so-called hodogram , which shows how the wave field vector moves in the plane perpendicular to B0. If the field vector moves in the same direction as a positive ion would gyrate then the wave is left-hand polarized. If the vector rotates in the opposite direction the wave is righthand polarized. Plot the magnetic field vector in this plane and determine the polarization of the waves. Sometimes it is easier to see the rotation if you normalize the length of the vectors to 1. Do the same with the electric field wave vector.}\\
 
-\begin{figure}[t!]
+The Figures \ref{fig:hodogram_electric} and \ref{fig:hodogram_magnetic} show the hodogram for the electric and magnetic field respectively. The electric field shows no particular polarization but hodogrom of magnetic field seems to moving in counter-clock wise directiona and hence the magnetic field is right hand polarized.
+
+\begin{figure}[hbt!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/hodogram_electric.png}
 \caption{Hodogram of Electric Field.}
-\label{fig:PSD_electric}
+\label{fig:hodogram_electric}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=8cm]{Figures/hodogram_magnetic.png}
 \caption{Hodogram of Magnetic Field}
-\label{fig:PSD_electric_error}
+\label{fig:hodogram_magnetic}
 \end{minipage}
 \end{figure}
 
@@ -238,9 +245,9 @@ The peaks are around 90-100 Hz. Which corresponds to our rough estimation in que
 \section{Particle Measurements}
 
 For this part of the practical we have been provided the particle data from the SWIM
-instrument onboard the Chandrayaan-1 spacecraft. Chandrayaan-1 orbits the moon at an altitude of 100 km. The position of the spacecraft at different times is shown in the Figures \ref{fig:orbit_1069} and \ref{fig:orbit_1070}, which also show the position of the moon with respect to Earth.
+instrument onboard the Chandrayaan-1 spacecraft. Chandrayaan-1 orbits the moon at an altitude of 100 km. The position of the spacecraft at different times is shown in the Figures \ref{fig:orbit_1069} and \ref{fig:orbit_1070}, which also show the position of the moon with respect to Earth.\cite{Stenberg:2012_2b}
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
 \includegraphics[width=9cm]{Figures/orbit_1069.png}
@@ -265,14 +272,14 @@ orbits.}
 
 The spectrograms for the orbits 1069 and 1070 is shown in Figure \ref{fig:spectrogram_1069} and \ref{fig:spectrogram_1070} respectively. When SWIM looks at the solar wind the number of solar wind particles that hit the instrument increases significantly which is observable as the red portion in Figures \ref{fig:spectrogram_1069} and \ref{fig:spectrogram_1070}. For orbit 1069, it occurs approximately between $100th$ and $350th$ observation time bin which corresponds to UTC 05:29 to UTC 06:02 hours. For orbit 1070, it occurs approximately between $25th$ and $250th$ observation time bin which corresponds to UTC 07:22 to UTC 08:12 hours.
 
-\begin{figure}[h!]
+\begin{figure}[htb!]
 \centering
 \includegraphics[scale=0.35]{Figures/spectrogram_1069.png}
 \caption{Spectrogram of the 1069 Orbit}
 \label{fig:spectrogram_1069}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htb!]
 \centering
 \includegraphics[scale=0.35]{Figures/spectrogram_1070.png}
 \caption{Spectrogram of the 1070 Orbit}
@@ -283,7 +290,7 @@ The spectrograms for the orbits 1069 and 1070 is shown in Figure \ref{fig:spectr
 \textit{Protons are the main ions in the solar wind, but can you identify any other
 components? Motivate you answer!}
 
-{\color{red} Helium double plus. I am not sure.}
+Helium ions $He^{2+}$. The instruments measure E/q ratio. The helium ions and protons have the same E/q ratio.
 
 \subsection{Question 3}
 \textit{Make energy spectra, this is, plot observed counts versus energy for a selected
@@ -291,14 +298,14 @@ time interval around the solar wind observation.}
 
 The energy spectra for the time when the SWIM instrument looks at the solar wind for the orbit 1069 and orbit 1070 is shown in Figure \ref{fig:energy_spectra_1069} and \ref{fig:energy_spectra_1070} respectively
 
-\begin{figure}[h!]
+\begin{figure}[htb!]
 \centering
 \includegraphics[scale = 0.35]{Figures/energy_spectra_1069.png}
 \caption{Energy Spectra of the 1069 Orbit}
 \label{fig:energy_spectra_1069}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htb!]
 \centering
 \includegraphics[scale = 0.35]{Figures/energy_spectra_1070.png}
 \caption{Energy Spectra of the 1070 Orbit}
@@ -309,23 +316,32 @@ The energy spectra for the time when the SWIM instrument looks at the solar wind
 \textit{Determine the solar wind proton velocity and temperature by first transforming the
 data from energy to velocity space and then fitting a Maxwellian distribution. What
 temperatures and velocities do you get? Are there differences between the orbits? If
-so, why?}
+so, why?}\\
 
-\begin{figure}[!ht]
+For the orbit 1070 the proton velocity is 389.4 $Km/s$ and temperature is {\color{red}9,184,931 K} 
+and for the orbit 1069 the proton velocityis 410.1 $Km/s$ and the temperature is {\color{red}10,187,404 K.}
+
+\subsection{Question 5}
+\textit{How do you determine the velocity of other components in the solar wind? What
+results do you get?}\\
+
+The velocity of other components is also determined in the same way as protons. They would give out the same values as protons because the instrument measures E/q values which is the same for proton and $He^{2+}.$ 
+
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.35]{Figures/velocity_spectra_1069.png}
 \caption{Velocity Spectra of the 1069 Orbit}
 \label{fig:Velocity_spectra_1069}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[htb!]
 \centering
 \includegraphics[scale=0.35]{Figures/velocity_spectra_1070.png}
 \caption{Velocity Spectra of the 1070 Orbit}
 \label{fig:Velocity_spectra_1070}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.45]{Figures/curvefit_1069.png}
 \caption{Maxwellian Curve fit for data from Orbit 1069}
@@ -339,13 +355,13 @@ so, why?}
 \label{fig:curvefit_1070}
 \end{figure}
 
-\clearpage
+\subsection{Question 6}
+\textit{Compare your results with the observations made by one of the spacecrafts ACE or WIND: \url{http://www.srl.caltech.edu/ACE/ASC/level2/lvl2DATA_SWEPAM.html} or \url{ftp://space.mit.edu/pub/plasma/wind/kp_files/}. Note that the ACE/WIND measurements are made far upstream of the spacecraft so you have to compensate for this when you compare.}\\
 
-%----------------------------------------------------------------------------------------
-%	SECTION 3. CONCLUSION
-%----------------------------------------------------------------------------------------
-%\newpage
-\section{Conclusion}
+Data was retrieved for the same date and hour as the swim instrument and the proton velocity according to this data is 377.2 $Km/s$ and the temperature is 39,327 K. The minor difference is due to the reason that ACE makes measurements far upstream. \cite{ACE:measurements}
+
+	
+\clearpage
 
 
 %----------------------------------------------------------------------------------------
@@ -354,25 +370,15 @@ so, why?}
 \newpage
 \begin{thebibliography}{9}
 
-\bibitem{Enmark:2012a3}
-Enmark A.  (2012).
-\newblock {\em Assignment 3. Optimization of phased array antenna radiation pattern and array configuration}.
+\bibitem{ACE:measurements}
+ACE SWEPAM Level 2 Data.
+\newblock {\em Measurements from the satellite ACE}.
+\newblock {\url{http://www.srl.caltech.edu/ACE/ASC/level2/lvl2DATA_SWEPAM.html}}.
+
+\bibitem{Stenberg:2012_2b}
+Stenberg G.  (2012).
+\newblock {\em Practical 2B. Data Analysis}.
 \newblock Lule\aa \ University of Technology, Kiruna, Sweden.
-
-\bibitem{Skolnik:2001irs}
-Skolnik M. ~I.  (2001).
-\newblock {\em Introduction to Radar Systems}.
-\newblock The McGraw-Hill Companies, Inc., New York, United States.
-
-\bibitem{Rottger:2000ip}
-R\"ottger J.  (2000).
-\newblock {\em The Instrumental Principles of MST Radars and Incoherent Scatter Radars and The Configuration of Radar System Hardware}.
-\newblock Max Planck Institut F\"ur Aeronomie, Katlenburg-Lindau, Germany.
-
-\bibitem{Wiki:2012pa}
-Wikipedia.org. (2012).
-\newblock {\em Phased array}.
-\newblock {\url{http://en.wikipedia.org/wiki/Phased_array}}.
 
 \end{thebibliography}
 
