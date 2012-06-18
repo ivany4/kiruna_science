@@ -11,7 +11,7 @@
 
 \documentclass{article}
 
-\title{\textbf {Space Physics} \\ Practical 2B\\ Data Analysis} % Title
+\title{\textbf {Space Physics} \\ Practical 2B\\ Data Analysis\\ Revision 1} % Title
 \def\authorivan{Ivan \v Sinkarenko}
 \def\authoranu{Anuraj Rajendraprakash}
 \author{\authorivan\\\authoranu}
@@ -42,14 +42,7 @@
 \clearpage
 
 %----------------------------------------------------------------------------------------
-%	SECTION 1. Introduction
-%----------------------------------------------------------------------------------------
-\section{Introduction}
-
-    
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2. Time Series Data
+%	SECTION 1. Time Series Data
 %----------------------------------------------------------------------------------------
 \section{Time Series Data}
 
@@ -69,7 +62,7 @@ The measurment taken on 2002-03-02 at 03:29-03:30 is taken at the time when the 
 \subsection{Question 2}
 \textit{Plot the time series (all components) from the three instruments. Can you identify any waves? What type of waves are we looking at: Electrostatic or electromagnetic? Is there a need to correct the data somehow? If so, why and how do you do that?}
 
-Electromagnetic between 20 and 30 s. Electrostatic between 55 and 60 s. x component is facing towards the sun. It should fluctuate around zero, like the y-component does it. It happens because of the photon emission, which is captured by the probes. Thus, data correction is needed.
+Electromagnetic between 20 and 30 s. Electrostatic between 55 and 60 s. x component is facing towards the sun. It should fluctuate around zero, like the y-component does it. It happens because of the photon emission, which is captured by the probes. There is an oscillation with constant frequency and a DC shift in the x component of the electric field. These effects are common in a double probe measurement on board a spinning spacecraft. The constant oscillation seen in Figure \ref{fig:EFW} is due to the spin of the spacecraft, this oscillation has half the rotation period of the spacecraft, which is approximately 2 seconds for the given data. For using the data properly these effects have to be removed from the data. The DC shift can be removed by taking the average of the data and then subtracting it. For removing the oscillations from the data signal processing can be used to remove oscillation at that particular frequency.
 
 \begin{figure}[htb!]
 \centering
@@ -100,78 +93,66 @@ Roughly estimated wave period is about 0.01 s (zoomed in and estimated between 2
 \subsection{Question 4}
 \textit{Compute the fundamental frequencies (electron and proton gyrofrequencies and the electron plasma frequency) in the plasma. The background magnetic field you have in the data. The density can be found from the overview data. However, the ion density is usually underestimated. Therefore, it is a good idea to compare with the high frequency emissions obtained by the WHISPER instrument. In the WHISPER data you can identify the electron plasma frequency directly, as a thin horizontal line visible most of the time. What density does the WHISPER signal correspond to? Compare the wave frequency with the fundamental frequencies. What are you conclusions?}
 
-From overview data, ion density is $~1.5 cm^3$. The minimum and maximum Electron gyrofrequency are 0.82 kHz and 0.88 kHz respectively while the minimum and maximum Proton gyrofrequency is $4.5 X 10^{-4}$ Hz and $4.8 X 10^{-4}$ Hz respectively. The electron Plasma frequency is 10.9 kHz considering a density of $~1.5 cm^3$. The estimated plasma frequency from WHISPER is 16 kHz.
+From overview data, ion density is $~1.5 \; cm^3$. The minimum and maximum Electron gyrofrequency are 0.82 kHz and 0.88 kHz respectively while the minimum and maximum Proton gyrofrequency is $0.45091$ Hz and $0.48342$ Hz respectively. The electron Plasma frequency is 10.9 kHz considering a density of $~1.5 \; cm^3$. The estimated plasma frequency from WHISPER is 16 kHz. This was used to calculate the electron density and a value of $n= 3.1746 \; cm^{−3}$ was obtained.
+
+
+From the above results it can be concluded that only the electrons cause the wave because the wave frequency is much bigger than the proton gyrofrequency. The protons are too slow to have any effect on the appearance of this wave.
 
 
 \subsection{Question 5}
 \textit{Compute the PSD of the electric and magnetic wave fields for the entire time period. If you want you can use the Matlab-function PSDvsFREQ(). Compare with your results obtained in 2 and 3. Also, investigate the how the error changes when you sum over fewer records. If you want you can use the errorbar() function to visualize this. Which are your
 conclusions?}\\
 
-The Figures \ref{fig:PSD_electric} and \ref{fig:PSD_magnetic} show the PSD of electric and magnetic field respectively. The Figures \ref{fig:PSD_electric_error} and \ref{fig:PSD_magnetic_error} show the PSD with error bars. The peaks are around 90-100 Hz. Which corresponds to our rough estimation in question 3. The Figures \ref{fig:PSD_magnetic_errorL} and \ref{fig:PSD_electric_errorL} show the PSD of electric and magnetic fields when fewer records have been used. It can bee seen the the error is less when less records are used. 
+The Figures \ref{fig:PSD_electric} and \ref{fig:PSD_magnetic} show the PSD of electric and magnetic field respectively. The peaks are around 90-100 Hz. Which corresponds to our rough estimation in question 3. The Figures \ref{fig:PSD_electric_50} and \ref{fig:PSD_magnetic_50} show the PSD of electric and magnetic fields when fewer records have been used along with the error bars. It can bee seen the the error is increases when less records are used. The parameters used are NK=200; Kstart=1; Kshift=100;N=1024; NG=N; GW=NG/4;
+
+
 
 \begin{figure}[htb!]
-\begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/PSD_electric.png}
-\caption{PSD of Electric Field.}
+\includegraphics[width=\textwidth]{Figures/PSD_electric.png}
+\caption{PSD of Electric Field with N=1024.}
 \label{fig:PSD_electric}
-\end{minipage}
-\hspace{0.1cm}
-\begin{minipage}[c]{0.5\linewidth}
-\centering
-\includegraphics[width=8cm]{Figures/PSD_electric_error.png}
-\caption{PSD of Electric Field with Error Bar}
-\label{fig:PSD_electric_error}
-\end{minipage}
 \end{figure}
 
 \begin{figure}[htb!]
-\begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/PSD_magnetic.png}
-\caption{PSD of Magnetic Field.}
+\includegraphics[width=\textwidth]{Figures/PSD_magnetic.png}
+\caption{PSD of Magnetic Field with N=1024.}
 \label{fig:PSD_magnetic}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{minipage}[c]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/PSD_electric_200.png}
+\caption{PSD of Electric Field Nk=200}
+\label{fig:PSD_electric_200}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/PSD_magnetic_error.png}
-\caption{PSD with Error Bar}
-\label{fig:PSD_magnetic_error}
+\includegraphics[width=8cm]{Figures/PSD_electric_50.png}
+\caption{PSD of Electric Field Nk=50}
+\label{fig:PSD_electric_50}
 \end{minipage}
 \end{figure}
 
 \begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/PSD_electric_L.png}
-\caption{PSD of Electric Field with less records}
-\label{fig:PSD_electric_L}
+\includegraphics[width=8cm]{Figures/PSD_magnetic_200.png}
+\caption{PSD of Magnetic Field Nk=200}
+\label{fig:PSD_magnetic_200}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/PSD_electric_errorL.png}
-\caption{PSD with Error Bar and less records}
-\label{fig:PSD_electric_errorL}
+\includegraphics[width=8cm]{Figures/PSD_magnetic_50.png}
+\caption{PSD of Magnetic Field Nk=50}
+\label{fig:PSD_magnetic_50}
 \end{minipage}
 \end{figure}
 
-\begin{figure}[htb!]
-\begin{minipage}[c]{0.5\linewidth}
-\centering
-\includegraphics[width=8cm]{Figures/PSD_magnetic_L.png}
-\caption{PSD of Magnetic Field with less records.}
-\label{fig:PSD_magnetic_L}
-\end{minipage}
-\hspace{0.1cm}
-\begin{minipage}[c]{0.5\linewidth}
-\centering
-\includegraphics[width=8cm]{Figures/PSD_magnetic_errorL.png}
-\caption{PSD with Error Bar with less records}
-\label{fig:PSD_magnetic_errorL}
-\end{minipage}
-\end{figure}
 
 
 \subsection{Question 6}
@@ -195,41 +176,57 @@ The Figures \ref{fig:PSD_electric_z_2} and \ref{fig:PSD_magnetic_z_2} show the P
 \end{minipage}
 \end{figure}
 
-
-\subsection{Question 7}
-\textit{Plot spectrograms (=PSD versus time and frequency) of both the electric and magnetic fields. You can do this by using the Matlab function means() and ignoring the wave vector output. Try different resolutions in time and frequency.What are you conclusions?}\\
-
-The Figures \ref{fig:spectrogram_electricHR} and \ref{fig:spectrogram_magneticHR} show the spectrogram of electric and magnetic field respectively. There is an increase in the power at all frequencies at about time 300 seconds. This might be when the spacecraft is close to the magnetopause. The Figures \ref{fig:spectrogram_electricLR} and \ref{fig:spectrogram_magneticLR} show the spectrogram with lower resolution in time and frequency, which makes it difficult to clear identify the region of high spectral power density.
-
 \begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/spectrogram_electricHR.png}
-\caption{Spectrogram of Electric Field with high time and frequency resolution}
-\label{fig:spectrogram_electricHR}
+\includegraphics[width=8cm]{Figures/PSD_electric_N_256.png}
+\caption{PSD of Electric Field for frequncy 0 to 225 Hz with N=256}
+\label{fig:PSD_electric_N_256}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/spectrogram_magneticHR.png}
-\caption{Spectrogram of Magnetic Field with high time and frequency resolution}
-\label{fig:spectrogram_magneticHR}
+\includegraphics[width=8cm]{Figures/PSD_magnetic_N_256.png}
+\caption{PSD of Magnetic Field for frequency 0 to 225 Hz with N=256}
+\label{fig:PSD_magnetic_N_256}
+\end{minipage}
+\end{figure}
+
+
+\subsection{Question 7}
+\textit{Plot spectrograms (=PSD versus time and frequency) of both the electric and magnetic fields. You can do this by using the Matlab function means() and ignoring the wave vector output. Try different resolutions in time and frequency.What are you conclusions?}\\
+
+The Figures \ref{fig:spectrogram_electric_highF} and \ref{fig:spectrogram_electric_highT} show the spectrogram of electric field with high frequency and high time resolution respectively. The Figures \ref{fig:spectrogram_magnetic_highF} and \ref{fig:spectrogram_magnetic_highT} show the spectrogram of the magnetic field with high frequency and high time resolution respectively. The time when the wave appears is clearly visible, because of the power increase. The parameters used for high frequency resolution are $Ng = 4096, Kshift = 2048, \mbox{No. of records for fft average} = 5$. The parameters used for high time resolution are $Ng = 64, Kshift = 32, \mbox{No. of records for fft average} = 2$.
+
+\begin{figure}[htb!]
+\begin{minipage}[c]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/spectrogram_electric_highF.png}
+\caption{Spectrogram of Electric Field with high frequency resolution}
+\label{fig:spectrogram_electric_highF}
+\end{minipage}
+\hspace{0.1cm}
+\begin{minipage}[c]{0.5\linewidth}
+\centering
+\includegraphics[width=8cm]{Figures/spectrogram_electric_highT.png}
+\caption{Spectrogram of Electric Field with high time resolution}
+\label{fig:spectrogram_electric_highT}
 \end{minipage}
 \end{figure}
 
 \begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/spectrogram_electricLR.png}
-\caption{Spectrogram of Electric Field with low time and frequency resolution}
-\label{fig:spectrogram_electricLR}
+\includegraphics[width=8cm]{Figures/spectrogram_magnetic_highF.png}
+\caption{Spectrogram of Magnetic Field with high frequency resolution}
+\label{fig:spectrogram_magnetic_highF}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[c]{0.5\linewidth}
 \centering
-\includegraphics[width=8cm]{Figures/spectrogram_magneticLR.png}
-\caption{Spectrogram of Magnetic Field with low time and frequency resolution}
-\label{fig:spectrogram_magneticLR}
+\includegraphics[width=8cm]{Figures/spectrogram_magnetic_highT.png}
+\caption{Spectrogram of Magnetic Field with high time resolution}
+\label{fig:spectrogram_magnetic_highT}
 \end{minipage}
 \end{figure}
 
@@ -306,7 +303,7 @@ The spectrograms for the orbits 1069 and 1070 is shown in Figure \ref{fig:spectr
 \textit{Protons are the main ions in the solar wind, but can you identify any other
 components? Motivate you answer!}
 
-Helium ions $He^{2+}$. The instruments measure E/q ratio. The helium ions and protons have the same E/q ratio.
+In Figure \ref{fig:spectrogram_1069} we observe two counts in two color areas one red and one light blue that correspond to different energy levels this suggest that there are two different components. The larger coloured area corresponds to protons because they are the main constituent of solar wind. The other energy colour could be because of Helium ions. Helium has a higher energy because all the solar wind particles move with the same velocity and helium has four times the mass of a proton and twice its charge so Helion ions have more energy.
 
 \subsection{Question 3}
 \textit{Make energy spectra, this is, plot observed counts versus energy for a selected
@@ -334,14 +331,18 @@ data from energy to velocity space and then fitting a Maxwellian distribution. W
 temperatures and velocities do you get? Are there differences between the orbits? If
 so, why?}\\
 
-For the orbit 1070 the proton velocity is 389.4 $Km/s$ and temperature is {\color{red}9,184,931 K} 
-and for the orbit 1069 the proton velocityis 410.1 $Km/s$ and the temperature is {\color{red}10,187,404 K.}
+For the orbit 1070 the proton velocity is 389.4 $Km/s$ and temperature is $T= 1.645 \times 10^5 K$ 
+and for the orbit 1069 the proton velocityis 410.1 $Km/s$ and the temperature is  $T = 4.944 \times 10^4 K $. The differences between the two orbits are relatively small and could be because of the variable nature of the solar wind.
+
 
 \subsection{Question 5}
 \textit{How do you determine the velocity of other components in the solar wind? What
 results do you get?}\\
 
-The velocity of other components is also determined in the same way as protons. They would give out the same values as protons because the instrument measures E/q values which is the same for proton and $He^{2+}.$ 
+The SWIM instrument measures the $ \frac{E}{q}$ value and this value will be different based
+on the analyzed element and will depend entirely on the mass and charge. The other component of solar winid is ionized Helium, which has four times the amount of mass as a proton. So to calculate the velocity we need to know the energy value. The $ \frac{E}{q}$ is estimated from Figure \ref{fig:spectrogram_1069} as 1550 eV. The $mass = 4*m_p$ and the charge for an ionized Helium is
+$q=2 \times 1.6 \times 10^{-19}$. To calculate the energy you just take the $ \frac{E}{q}$ and multiply it with the charge.You could then determine the velocity through the kinetic energy formula $ E = \frac{mv^2}{2}$. This gives us a velocity for the Helium around 385.321 km/s
+
 
 \begin{figure}[!htb]
 \centering
@@ -374,7 +375,8 @@ The velocity of other components is also determined in the same way as protons. 
 \subsection{Question 6}
 \textit{Compare your results with the observations made by one of the spacecrafts ACE or WIND: \url{http://www.srl.caltech.edu/ACE/ASC/level2/lvl2DATA_SWEPAM.html} or \url{ftp://space.mit.edu/pub/plasma/wind/kp_files/}. Note that the ACE/WIND measurements are made far upstream of the spacecraft so you have to compensate for this when you compare.}\\
 
-Data was retrieved for the same date and hour as the swim instrument and the proton velocity according to this data is 377.2 $Km/s$ and the temperature is 39,327 K. The minor difference is due to the reason that ACE makes measurements far upstream. \cite{ACE:measurements}
+Data was retrieved for the same date and hour as the swim instrument and the proton velocity according to this data is 377.2 $Km/s$ and the temperature is 39,327 K which is near to what we observed in SWIM instrument on Chandrayaan-1. WIND is not at the same position as Chandrayaan-1 so we need to take the distance between WIND and Chandrayaan-1's position while making comparison between the data from both. The approximate distance is $1.5\times10^6$ km. The solar wind’s velocity is approximately 400 km/s and this means that it takes the solar wind about one hour to travel from WIND to Chandrayaan-1. So in order to compare the data between the two we have to take Wind data one hour before the data in Chandrayaan-1.
+
 
 	
 \clearpage
