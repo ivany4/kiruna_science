@@ -11,7 +11,7 @@
 
 \documentclass{article}
 
-\title{\textbf {Space Physics} \\ Practical 2B\\ Data Analysis\\ Revision 1} % Title
+\title{\textbf {Space Physics} \\ Practical 2B\\ Data Analysis\\ Revision 2} % Title
 \def\authorivan{Ivan \v Sinkarenko}
 \def\authoranu{Anuraj Rajendraprakash}
 \author{\authorivan\\\authoranu}
@@ -158,7 +158,7 @@ The Figures \ref{fig:PSD_electric} and \ref{fig:PSD_magnetic} show the PSD of el
 \subsection{Question 6}
 \textit{Look at (=make PSDs for) two different frequency ranges: 0-225 Hz and 0-2 Hz. You should aim at good statistics so the frequency resolution should be different in the two plots. The frequency resolution is given by $Δf=1/NΔt$, where Δt is the time between two samples and N is the record length used in the Fourier transform. For each of the plots: provide all the information about the PSD you present: The length of the record, the shift between records and the total number of records used.}\\
 
-The Figures \ref{fig:PSD_electric_z_2} and \ref{fig:PSD_magnetic_z_2} show the PSD of electric and magnetic field for 0 to 2 Hz frequency. The errors are more easily visible in this PSD.
+The Figures \ref{fig:PSD_electric_z_2} and \ref{fig:PSD_magnetic_z_2} show the PSD of electric and magnetic field for 0 to 2 Hz frequency. 
 
 \begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
@@ -196,7 +196,7 @@ The Figures \ref{fig:PSD_electric_z_2} and \ref{fig:PSD_magnetic_z_2} show the P
 \subsection{Question 7}
 \textit{Plot spectrograms (=PSD versus time and frequency) of both the electric and magnetic fields. You can do this by using the Matlab function means() and ignoring the wave vector output. Try different resolutions in time and frequency.What are you conclusions?}\\
 
-The Figures \ref{fig:spectrogram_electric_highF} and \ref{fig:spectrogram_electric_highT} show the spectrogram of electric field with high frequency and high time resolution respectively. The Figures \ref{fig:spectrogram_magnetic_highF} and \ref{fig:spectrogram_magnetic_highT} show the spectrogram of the magnetic field with high frequency and high time resolution respectively. The time when the wave appears is clearly visible, because of the power increase. The parameters used for high frequency resolution are $Ng = 4096, Kshift = 2048, \mbox{No. of records for fft average} = 5$. The parameters used for high time resolution are $Ng = 64, Kshift = 32, \mbox{No. of records for fft average} = 2$.
+The Figures \ref{fig:spectrogram_electric_highF} and \ref{fig:spectrogram_electric_highT} show the spectrogram of electric field with high frequency and high time resolution respectively. The Figures \ref{fig:spectrogram_magnetic_highF} and \ref{fig:spectrogram_magnetic_highT} show the spectrogram of the magnetic field with high frequency and high time resolution respectively. The time when the wave appears is clearly visible, because of the power increase with high time resolution. But the high frequency shows the wave better. So in this case high frequency has to be used. The parameters used for high frequency resolution are $$NG = 4096;N = NG;GW = N/2;Kshift = 2048;Kstart = 1;ntshift=1;ntaver=2$$The parameters used for high time resolution are $$NG = 64;N = NG;GW = N/2;Kshift = 32;Kstart = 1;ntshift=1;ntaver=2$$
 
 \begin{figure}[htb!]
 \begin{minipage}[c]{0.5\linewidth}
@@ -233,7 +233,7 @@ The Figures \ref{fig:spectrogram_electric_highF} and \ref{fig:spectrogram_electr
 \subsection{Question 8}
 \textit{Now we can produce a so-called hodogram , which shows how the wave field vector moves in the plane perpendicular to B0. If the field vector moves in the same direction as a positive ion would gyrate then the wave is left-hand polarized. If the vector rotates in the opposite direction the wave is righthand polarized. Plot the magnetic field vector in this plane and determine the polarization of the waves. Sometimes it is easier to see the rotation if you normalize the length of the vectors to 1. Do the same with the electric field wave vector.}\\
 
-The Figures \ref{fig:hodogram_electric} and \ref{fig:hodogram_magnetic} show the hodogram for the electric and magnetic field respectively. The electric field shows no particular polarization but hodogrom of magnetic field seems to moving in counter-clock wise directiona and hence the magnetic field is right hand polarized.
+The Figures \ref{fig:hodogram_electric} and \ref{fig:hodogram_magnetic} show the hodogram for the electric and magnetic field respectively. It starts with red then green and blue. The hodogrom of magnetic field seems to moving in counter-clock wise direction and hence the magnetic field is right hand polarized. The electric field seems to move in the counter clock wise direction, so it might accelerate electrons and slow down ions.
 
 \begin{figure}[hbt!]
 \begin{minipage}[c]{0.5\linewidth}
@@ -375,8 +375,15 @@ $q=2 \times 1.6 \times 10^{-19}$. To calculate the energy you just take the $ \f
 \subsection{Question 6}
 \textit{Compare your results with the observations made by one of the spacecrafts ACE or WIND: \url{http://www.srl.caltech.edu/ACE/ASC/level2/lvl2DATA_SWEPAM.html} or \url{ftp://space.mit.edu/pub/plasma/wind/kp_files/}. Note that the ACE/WIND measurements are made far upstream of the spacecraft so you have to compensate for this when you compare.}\\
 
-Data was retrieved for the same date and hour as the swim instrument and the proton velocity according to this data is 377.2 $Km/s$ and the temperature is 39,327 K which is near to what we observed in SWIM instrument on Chandrayaan-1. WIND is not at the same position as Chandrayaan-1 so we need to take the distance between WIND and Chandrayaan-1's position while making comparison between the data from both. The approximate distance is $1.5\times10^6$ km. The solar wind’s velocity is approximately 400 km/s and this means that it takes the solar wind about one hour to travel from WIND to Chandrayaan-1. So in order to compare the data between the two we have to take Wind data one hour before the data in Chandrayaan-1.
 
+ACE is not at the same position as Chandrayaan-1 so we need to take the distance between ACE and Chandrayaan-1's position while making comparison between the data from both. The approximate distance is $1.5\times10^6$ km. The solar wind’s velocity is approximately 400 km/s and this means that it takes the solar wind about one hour to travel from ACE to Chandrayaan-1. So in order to compare the data between the two the data from ACE has been taken one hour before the data in Chandrayaan-1.
+Data was observed from the ACE instrument from their website relating to the time of orbit 1069 and orbit 1070. It was given to be
+\begin{itemize}
+\item {For orbit 1069- Velocity of Solar wind was $331 Km/s$}
+\item {For orbit 1070- Velocity of Solar wind was $328 Km/s$}
+\end{itemize}
+
+This is the same order of magnitude as calcuated in the previous questions.
 
 	
 \clearpage
